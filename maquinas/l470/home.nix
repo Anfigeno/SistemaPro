@@ -13,5 +13,14 @@
   ];
 
   # Paquetes extra :)
-  home.packages = with pkgs; [ sshfs nixd nixfmt-classic ];
+  home.packages = with pkgs; [
+    sshfs
+    nixd
+    nixfmt-classic
+    zip
+    unzip
+    vlc
+    feh
+    ungoogled-chromium
+  ];
 }
