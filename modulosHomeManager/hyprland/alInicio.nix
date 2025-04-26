@@ -1,0 +1,1 @@
+[ "ulauncher --hide-window" ]
