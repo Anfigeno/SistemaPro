@@ -3,10 +3,8 @@
 {
   imports = [ ../../modulosHomeManager ];
   config.modulosHomeManager = {
-    hyprland.activar = true;
+    entornoHyprland.activar = true;
     fuentes.activar = true;
-    ulauncher.activar = true;
-    xdg.activar = true;
     entornoDeDesarrollo.activar = true;
   };
 }

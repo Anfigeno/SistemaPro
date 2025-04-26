@@ -5,14 +5,12 @@
   imports = [
     ./neovim
     ./kitty
-    ./hyprland
+    ./entornoHyprland
     ./fish
     ./discord
     ./zed
     ./fuentes
     ./git
-    ./ulauncher
-    ./xdg
     ./entornoDeDesarrollo.nix
   ];
 }

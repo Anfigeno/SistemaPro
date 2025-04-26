@@ -1,11 +1,13 @@
 { pkgs, lib, config, ... }:
-let cfg = config.modulosHomeManager.hyprland;
+let cfg = config.modulosHomeManager.entornoHyprland;
 in {
-  options.modulosHomeManager.hyprland = {
-    activar = lib.mkEnableOption "Activa el módulo de Hyprland";
+  options.modulosHomeManager.entornoHyprland = {
+    activar = lib.mkEnableOption "Activa el módulo de entoronoHyprland";
   };
 
   config = lib.mkIf cfg.activar {
+    home.packages = with pkgs; [ xdg-utils ulauncher ];
+
     wayland.windowManager.hyprland = {
       enable = true;
       settings = {

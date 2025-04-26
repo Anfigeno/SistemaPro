@@ -6,9 +6,6 @@ in {
   };
 
   config = lib.mkIf cfg.activar {
-    home.packages = with pkgs; [
-      monaspace
-      ubuntu_font_family
-    ];
+    home.packages = with pkgs; [ monaspace ubuntu_font_family noto-fonts ];
   };
 }
