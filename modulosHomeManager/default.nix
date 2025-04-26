@@ -13,5 +13,6 @@
     ./git
     ./ulauncher
     ./xdg
+    ./entornoDeDesarrollo.nix
   ];
 }
