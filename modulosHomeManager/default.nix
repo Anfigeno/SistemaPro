@@ -12,5 +12,6 @@
     ./fuentes
     ./git
     ./ulauncher
+    ./xdg
   ];
 }

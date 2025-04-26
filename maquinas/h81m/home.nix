@@ -12,5 +12,6 @@
     fuentes.activar = true;
     git.activar = true;
     ulauncher.activar = true;
+    xdg.activar = true;
   };
 }
