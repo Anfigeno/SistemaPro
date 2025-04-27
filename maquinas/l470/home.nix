@@ -24,5 +24,8 @@
     feh
     ungoogled-chromium
     nautilus
+    firefox
+    firefox-beta
+    firefox-devedition
   ];
 }
