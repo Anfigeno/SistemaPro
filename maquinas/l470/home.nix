@@ -23,5 +23,6 @@
     vlc
     feh
     ungoogled-chromium
+    nautilus
   ];
 }
