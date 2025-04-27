@@ -18,6 +18,19 @@ in {
         bind = import ./config/hyprland/atajos.nix { inherit pkgs; };
         exec-once = import ./config/hyprland/alInicio.nix;
         input = { kb_layout = "latam"; };
+        decoration = {
+          rounding = 10;
+          blur = {
+            enabled = true;
+            passes = 1;
+            size = 3;
+          };
+        };
+        general = {
+          border_size = 1;
+          "col.active_border" = "rgba(ff5263ff)";
+          "col.inactive_border" = "rgba(1e1f2aff)";
+        };
       };
     };
 
