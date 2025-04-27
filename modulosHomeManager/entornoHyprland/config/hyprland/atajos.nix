@@ -18,14 +18,14 @@ in [
   ", XF86AudioMute, exec, ${audio}/bin/control-de-volumen silenciar"
 
   # Multimedia
-  ", XF86AudioPlay, exec, playerctl play-pause"
-  ", XF86AudioNext, exec, playerctl next"
-  ", XF86AudioPrev, exec, playerctl previous"
-  ", XF86AudioStop, exec, playerctl stop"
+  ", XF86AudioPlay, exec, ${pkgs.playerctl}/bin/playerctl play-pause"
+  ", XF86AudioNext, exec, ${pkgs.playerctl}/bin/playerctl next"
+  ", XF86AudioPrev, exec, ${pkgs.playerctl}/bin/playerctl previous"
+  ", XF86AudioStop, exec, ${pkgs.playerctl}/bin/playerctl stop"
 
   # Brillo
-  ", XF86MonBrightnessUp, exec, brightnessctl set +10%"
-  ", XF86MonBrightnessDown, exec, brightnessctl set 10%-"
+  ", XF86MonBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl set +10%"
+  ", XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl set 10%-"
 ] ++
 # Navegación entre escritorios
 (builtins.concatLists (builtins.genList (i:

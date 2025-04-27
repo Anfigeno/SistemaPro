@@ -6,7 +6,7 @@ in {
   };
 
   config = lib.mkIf cfg.activar {
-    home.packages = with pkgs; [ xdg-utils ulauncher playerctl brightnessctl ];
+    home.packages = with pkgs; [ xdg-utils ulauncher ];
 
     services.dunst.enable = true;
 
