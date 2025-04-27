@@ -6,14 +6,16 @@ in {
   };
 
   config = lib.mkIf cfg.activar {
-    home.packages = with pkgs; [ xdg-utils ulauncher ];
+    home.packages = with pkgs; [ xdg-utils ulauncher playerctl brightnessctl ];
+
+    services.dunst.enable = true;
 
     wayland.windowManager.hyprland = {
       enable = true;
       settings = {
         "$mod" = "SUPER";
-        bind = import ./atajos.nix ++ import ./navegacion.nix;
-        exec-once = import ./alInicio.nix;
+        bind = import ./config/hyprland/atajos.nix { inherit pkgs; };
+        exec-once = import ./config/hyprland/alInicio.nix;
         input = { kb_layout = "latam"; };
       };
     };
