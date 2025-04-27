@@ -14,7 +14,6 @@ in {
       settings = {
         "$mod" = "SUPER";
         bind = import ./config/atajos.nix { inherit pkgs; };
-        exec-once = import ./config/alInicio.nix;
         input = { kb_layout = "latam"; };
         decoration = {
           rounding = 10;

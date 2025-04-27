@@ -2,7 +2,7 @@
 let audio = import ./scripts/audio.nix { inherit pkgs; };
 in [
   "SUPER, RETURN, exec, kitty"
-  "SUPER, SPACE, exec, ulauncher-toggle"
+  "SUPER, SPACE, exec, wofi --show drun"
 
   # Esencial
   "SUPER SHIFT, r, exec, hyprctl reload"
