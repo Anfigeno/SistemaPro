@@ -6,7 +6,7 @@ in {
   };
 
   config = lib.mkIf cfg.activar {
-    home.packages = with pkgs; [ eza bat ranger xclip btop cmus tty-clock ];
+    home.packages = with pkgs; [ eza bat ranger xclip btop cmus tty-clock bat ];
 
     programs.kitty = {
       enable = true;
@@ -20,16 +20,15 @@ in {
 
         font_size = 9;
         modify_font = ''
-          cell_height 10px
-          baseline -1
+          cell_height 8px
         '';
         disable_ligatures = "never";
 
         font_features = ''
-          MonaspaceNeon-Medium       +calt +ss01 +ss02 +ss03 +ss04 +ss05 +ss06 +ss07 +ss08 +ss09 +liga
-          MonaspaceKrypton-Medium    +calt +ss01 +ss02 +ss03 +ss04 +ss05 +ss06 +ss07 +ss08 +ss09 +liga
-          MonaspaceRadon-Medium      +calt +ss01 +ss02 +ss03 +ss04 +ss05 +ss06 +ss07 +ss08 +ss09 +liga
-          MonaspaceRadon-Bold      +calt +ss01 +ss02 +ss03 +ss04 +ss05 +ss06 +ss07 +ss08 +ss09 +liga
+          MonaspaceNeon-Medium       +calt +ss01 +ss02 +ss03 +ss04 +ss05 +ss06 +ss07 +ss08 +ss09 +cv62 +case +liga
+          MonaspaceKrypton-Medium    +calt +ss01 +ss02 +ss03 +ss04 +ss05 +ss06 +ss07 +ss08 +ss09 +cv62 +case +liga
+          MonaspaceRadon-Medium      +calt +ss01 +ss02 +ss03 +ss04 +ss05 +ss06 +ss07 +ss08 +ss09 +cv62 +case +liga
+          MonaspaceRadon-Bold        +calt +ss01 +ss02 +ss03 +ss04 +ss05 +ss06 +ss07 +ss08 +ss09 +cv62 +case +liga
         '';
 
         confirm_os_window_close = 0;
