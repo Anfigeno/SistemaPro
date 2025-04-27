@@ -29,7 +29,7 @@ in {
         };
         general = {
           border_size = 1;
-          "col.active_border" = "rgba(ff5263ff)";
+          "col.active_border" = "rgba(313749ff)";
           "col.inactive_border" = "rgba(1e1f2aff)";
         };
       };
