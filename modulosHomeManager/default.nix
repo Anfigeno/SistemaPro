@@ -10,11 +10,12 @@
     ./zed
     ./fuentes
     ./git
-    ./entornoDeDesarrollo.nix
     ./wofi
     ./gtk
     ./hyprland
     ./dunst
+    ./copyq
     ./entornoHyprland.nix
+    ./entornoDeDesarrollo.nix
   ];
 }

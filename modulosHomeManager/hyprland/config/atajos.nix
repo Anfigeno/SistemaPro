@@ -3,6 +3,9 @@ let audio = import ./scripts/audio.nix { inherit pkgs; };
 in [
   "SUPER, RETURN, exec, kitty"
   "SUPER, SPACE, exec, wofi --show drun"
+  "SUPER, e, exec, nautilus"
+  ''
+    , Print, exec, ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp -d)" - | ${pkgs.swappy}/bin/swappy -f -''
 
   # Esencial
   "SUPER SHIFT, r, exec, hyprctl reload"

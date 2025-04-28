@@ -10,5 +10,6 @@ in {
     gtk.activar = true;
     dunst.activar = true;
     wofi.activar = true;
+    copyq.activar = true;
   };
 }
