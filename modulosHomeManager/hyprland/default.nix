@@ -14,7 +14,12 @@ in {
       settings = {
         "$mod" = "SUPER";
         bind = import ./config/atajos.nix { inherit pkgs; };
-        input = { kb_layout = "latam"; };
+        input = {
+          kb_layout = "latam";
+          sensitivity = -0.6;
+          scroll_factor = 0.4;
+          touchpad = { natural_scroll = true; };
+        };
         decoration = {
           rounding = 10;
           blur = {
