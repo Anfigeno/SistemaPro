@@ -6,6 +6,11 @@ in {
   };
 
   config = lib.mkIf cfg.activar {
-    home.packages = with pkgs; [ discord discord-ptb discord-canary ];
+    home.packages = with pkgs; [
+      discord
+      discord-ptb
+      discord-canary
+      betterdiscordctl
+    ];
   };
 }
