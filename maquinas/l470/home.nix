@@ -25,5 +25,6 @@
     ungoogled-chromium
     nautilus
     floorp
+    prismlauncher
   ];
 }

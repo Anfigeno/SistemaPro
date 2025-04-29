@@ -11,6 +11,7 @@
         flatpak.activar = true;
         openssh.activar = true;
         fish.activar = true;
+        steam.activar = true;
       };
     }
   ];
