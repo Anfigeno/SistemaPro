@@ -14,10 +14,11 @@ in {
       settings = {
         "$mod" = "SUPER";
         bind = import ./config/atajos.nix { inherit pkgs; };
+        exec-once = [ "${pkgs.eww}/bin/eww open barra_de_tareas" ];
         input = {
           kb_layout = "latam";
           sensitivity = -0.6;
-          scroll_factor = 0.4;
+          scroll_factor = 0.6;
           touchpad = { natural_scroll = true; };
         };
         decoration = {
@@ -32,6 +33,8 @@ in {
           border_size = 1;
           "col.active_border" = "rgba(313749ff)";
           "col.inactive_border" = "rgba(1e1f2aff)";
+          gaps_in = 10;
+          gaps_out = 10;
         };
       };
     };
