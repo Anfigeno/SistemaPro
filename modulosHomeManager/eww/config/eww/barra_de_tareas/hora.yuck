@@ -1,0 +1,10 @@
+(defpoll horas :interval "1s" `date +"%H"`)
+(defpoll minutos :interval "1s" `date +"%M"`)
+
+(defwidget hora_widget []
+    (box
+        :class "hora-widget"
+        :orientation "v"
+        (label :class "minutos" :text horas)
+        (label :class "minutos" :text minutos)
+    ))

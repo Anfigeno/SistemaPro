@@ -15,6 +15,7 @@
     ./hyprland
     ./dunst
     ./copyq
+    ./eww
     ./entornoHyprland.nix
     ./entornoDeDesarrollo.nix
   ];

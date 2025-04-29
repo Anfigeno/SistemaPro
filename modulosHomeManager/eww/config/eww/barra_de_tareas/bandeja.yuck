@@ -1,0 +1,16 @@
+(defvar bandeja_abierta false)
+
+(defwidget bandeja_widget []
+    (eventbox
+        :onhover `eww update bandeja_abierta=true`
+        :onhoverlost `eww update bandeja_abierta=false`
+        (box
+            :orientation "v"
+            :space-evenly false
+            :class "bandeja-widget"
+            (revealer
+                :transition "slideup"
+                :reveal bandeja_abierta
+                :duration "200ms"
+                (systray :orientation "v" :icon-size 16 :class "bandeja"))
+                (label :class "indicador-bandeja" :text ""))))

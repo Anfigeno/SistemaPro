@@ -1,0 +1,42 @@
+(include "./eww/barra_de_tareas/escritorios.yuck")
+(include "./eww/barra_de_tareas/bandeja.yuck")
+(include "./eww/barra_de_tareas/menu_de_poder.yuck")
+(include "./eww/barra_de_tareas/hora.yuck")
+
+(defwindow barra_de_tareas
+    :class "barra_de_tareas"
+    :monitor 0
+    :geometry (geometry
+        :height "100%"
+        :anchor "left center")
+    :stacking "fg"
+    :windowtype "dock"
+    :focusable "none"
+    :exclusive true
+(barra_de_tareas_widget))
+
+(defwidget barra_de_tareas_widget []
+    (box
+        :orientation "v"
+        :class "barra_de_tareas_widget"
+        (barra_a)
+        (barra_b)
+    ))
+
+(defwidget barra_a []
+    (box
+        :class "barra-a"
+        :orientation "v"
+        :valign "start"
+    (escritorios)))
+
+(defwidget barra_b []
+    (box
+        :class "barra-b"
+        :orientation "v"
+        :valign "end"
+        :space-evenly false
+        (bandeja_widget)
+        (menu_de_poder_widget)
+        (hora_widget)
+    ))

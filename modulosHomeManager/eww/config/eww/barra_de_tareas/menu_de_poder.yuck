@@ -1,0 +1,21 @@
+(defvar menu_de_poder_abierto false)
+
+(defwidget menu_de_poder_widget []
+    (eventbox
+        :onhover `eww update menu_de_poder_abierto=true`
+        :onhoverlost `eww update menu_de_poder_abierto=false`
+        (box
+            :orientation "v"
+            :space-evenly false
+            :class "menu-de-poder-widget"
+            (revealer
+                :transition "slideup"
+                :reveal menu_de_poder_abierto
+                :duration "200ms"
+                (box
+                    :space-evenly false
+                    :orientation "v"
+                    :class "botones"
+                    (button :class "boton-apagar" :onclick `systemctl poweroff` "⏻")
+                    (button :class "boton-reiniciar" :onclick `systemctl reboot` "󰑓")))
+                (label :class "indicador-menu-de-poder" :text ""))))

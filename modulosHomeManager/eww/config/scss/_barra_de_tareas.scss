@@ -1,0 +1,90 @@
+.barra_de_tareas {
+  background-color: rgba(0, 0, 0, 0);
+  color: $tope;
+}
+
+.barra_de_tareas_widget {
+  margin: 15px 0 15px 15px;
+  background-color: $base_1;
+  border-radius: 10px;
+  border: 1px solid $base1;
+}
+
+.escritorio {
+  padding: 10px 18px;
+  border-bottom: 1px solid $base1;
+  color: $tope_2;
+  &:first-child {
+    border-top: 3px solid $verde;
+    border-radius: 10px 10px 0 0;
+    font-weight: bold;
+    color: $tope;
+    background-color: $base1;
+  }
+  &:hover {
+    color: $tope;
+    background-color: $base;
+  }
+}
+
+.bandeja-widget {
+  @extend .contenedor1;
+
+  & image {
+    &:first-child {
+      padding-top: 0;
+    }
+    padding: 16px 0;
+  }
+
+  & .popup {
+    border: 1px solid $base3;
+    border-radius: 10px;
+    background-color: $base;
+  }
+
+  & menu {
+    & image {
+      padding: 0 10px 0 0;
+    }
+    & menuitem {
+      padding: 10px 20px;
+      &:hover {
+        background-color: $base1;
+        color: $tope1;
+      }
+    }
+  }
+}
+
+.menu-de-poder-widget {
+  @extend .contenedor1;
+
+  & .indicador-menu-de-poder {
+    color: $naranja;
+    font-size: 15pt;
+  }
+
+  & .botones {
+    font-size: 20pt;
+
+    & .boton-apagar {
+      color: $rojo;
+    }
+
+    & .boton-reiniciar {
+      color: $amarillo;
+    }
+
+    &:last-child {
+      padding-bottom: 8px;
+    }
+  }
+}
+
+.hora-widget {
+  @extend .contenedor1;
+  font-size: 14pt;
+  padding: 5px 4px;
+  color: $tope1;
+}

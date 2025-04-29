@@ -1,0 +1,16 @@
+(defpoll lista_de_escritorios
+    :interval "100ms"
+    :initial "[]"
+    `hyprctl workspaces -j | jq --argjson active_id "$(hyprctl activeworkspace -j | jq '.id')" 'map(. + { "activo": (.id == $active_id) }) | sort_by((if .activo then 0 else 1 end), .id)'`)
+
+(defwidget escritorios []
+    (box
+        :class "escritorios"
+        :orientation "v"
+        :space-evenly false
+        (for escritorio in lista_de_escritorios
+            (button
+                :class "escritorio"
+                :onclick `hyprctl dispatch workspace ${escritorio.id}`
+                `${escritorio.id}`))
+  ))

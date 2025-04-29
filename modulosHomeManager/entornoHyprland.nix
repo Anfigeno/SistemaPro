@@ -11,5 +11,6 @@ in {
     dunst.activar = true;
     wofi.activar = true;
     copyq.activar = true;
+    eww.activar = true;
   };
 }

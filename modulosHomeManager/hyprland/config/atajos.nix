@@ -9,7 +9,7 @@ in [
 
   # Esencial
   "SUPER SHIFT, r, exec, hyprctl reload"
-  "SUPER SHIFT, c, forcekillactive"
+  "SUPER SHIFT, c, killactive"
   "SUPER SHIFT, F, exec, hyprctl dispatch togglefloating && hyprctl dispatch centerwindow"
   "SUPER, F, fullscreen"
 
