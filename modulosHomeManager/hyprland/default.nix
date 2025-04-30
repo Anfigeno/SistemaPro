@@ -17,8 +17,8 @@ in {
         exec-once = [ "${pkgs.eww}/bin/eww open barra_de_tareas" ];
         input = {
           kb_layout = "latam";
-          sensitivity = -0.6;
-          scroll_factor = 0.6;
+          sensitivity = -0.4;
+          scroll_factor = 0.8;
           touchpad = { natural_scroll = true; };
         };
         decoration = {

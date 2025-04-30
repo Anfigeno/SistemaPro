@@ -9,7 +9,7 @@
     :geometry (geometry
         :height "100%"
         :anchor "left center")
-    :stacking "fg"
+    :stacking "bg"
     :windowtype "dock"
     :focusable "none"
     :exclusive true
