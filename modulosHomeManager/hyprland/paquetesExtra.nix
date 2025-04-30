@@ -1,1 +1,1 @@
-{ pkgs }: with pkgs; [ xdg-utils dconf ]
+{ pkgs }: with pkgs; [ xdg-utils dconf swww ]
