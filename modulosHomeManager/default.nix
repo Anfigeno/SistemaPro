@@ -14,7 +14,6 @@
     ./gtk
     ./hyprland
     ./dunst
-    ./copyq
     ./eww
     ./desktopEntries
     ./cliphist

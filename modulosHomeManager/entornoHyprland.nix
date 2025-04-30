@@ -10,7 +10,6 @@ in {
     gtk.activar = true;
     dunst.activar = true;
     wofi.activar = true;
-    copyq.activar = true;
     eww.activar = true;
     desktopEntries.activar = true;
     cliphist.activar = true;
