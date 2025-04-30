@@ -8,8 +8,8 @@ in {
   config = lib.mkIf cfg.activar {
     xdg.portal = {
       enable = true;
-      extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-      config.common.default = [ "gtk" ];
+      extraPortals = with pkgs; [ xdg-desktop-portal-hyprland xdg-desktop-portal-gtk ];
+      config.common.default = [ "hyrpland" ];
     };
   };
 }

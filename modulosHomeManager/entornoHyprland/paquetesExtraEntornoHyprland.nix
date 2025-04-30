@@ -7,6 +7,6 @@ in {
   };
 
   config = lib.mkIf cfg.activar {
-    home.packages = with pkgs; [ vlc feh nautilus floorp ];
+    home.packages = with pkgs; [ mpv loupe nautilus floorp ];
   };
 }

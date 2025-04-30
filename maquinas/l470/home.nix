@@ -9,6 +9,7 @@
         fuentes.activar = true;
         entornoDeDesarrollo.activar = true;
         discord.activar = true;
+        obs.activar = true;
       };
     }
   ];

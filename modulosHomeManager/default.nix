@@ -17,6 +17,7 @@
     ./eww
     ./desktopEntries
     ./cliphist
+    ./obs
     ./entornoHyprland
     ./entornoDeDesarrollo
   ];
