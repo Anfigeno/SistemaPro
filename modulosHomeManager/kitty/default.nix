@@ -6,7 +6,7 @@ in {
   };
 
   config = lib.mkIf cfg.activar {
-    home.packages = with pkgs; [ eza bat ranger xclip btop cmus tty-clock bat ];
+    home.packages = import ./paquetesExtra.nix { inherit pkgs; };
 
     programs.kitty = {
       enable = true;

@@ -17,7 +17,7 @@
     ./eww
     ./desktopEntries
     ./cliphist
-    ./entornoHyprland.nix
-    ./entornoDeDesarrollo.nix
+    ./entornoHyprland
+    ./entornoDeDesarrollo
   ];
 }

@@ -1,6 +1,8 @@
 { pkgs, lib, config, ... }:
 let cfg = config.modulosHomeManager.entornoDeDesarrollo;
 in {
+  imports = [ ./paquetesExtraDesarrollo.nix ];
+
   options.modulosHomeManager.entornoDeDesarrollo = {
     activar = lib.mkEnableOption "Activa el módulo de entornoDeDesarrollo";
   };
@@ -12,5 +14,6 @@ in {
     zed.activar = true;
     fuentes.activar = true;
     git.activar = true;
+    paquetesExtraDesarrollo.activar = true;
   };
 }

@@ -6,7 +6,7 @@ in {
   };
 
   config = lib.mkIf cfg.activar {
-    home.packages = with pkgs; [ xdg-utils ulauncher dconf ];
+    home.packages = import ./paquetesExtra.nix { inherit pkgs; };
 
     wayland.windowManager.hyprland = {
       systemd.variables = [ "--all" ];

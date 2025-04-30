@@ -1,6 +1,8 @@
 { pkgs, lib, config, ... }:
 let cfg = config.modulosHomeManager.entornoHyprland;
 in {
+  imports = [ ./paquetesExtraEntornoHyprland.nix ];
+
   options.modulosHomeManager.entornoHyprland = {
     activar = lib.mkEnableOption "Activa el módulo de entornoHyprland";
   };
@@ -13,5 +15,6 @@ in {
     eww.activar = true;
     desktopEntries.activar = true;
     cliphist.activar = true;
+    paquetesExtraEntornoHyprland.activar = true;
   };
 }

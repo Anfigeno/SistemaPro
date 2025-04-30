@@ -14,17 +14,5 @@
   ];
 
   # Paquetes extra :)
-  home.packages = with pkgs; [
-    sshfs
-    nixd
-    nixfmt-classic
-    zip
-    unzip
-    vlc
-    feh
-    ungoogled-chromium
-    nautilus
-    floorp
-    prismlauncher
-  ];
+  home.packages = with pkgs; [ prismlauncher ];
 }
