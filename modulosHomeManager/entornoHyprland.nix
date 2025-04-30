@@ -12,5 +12,6 @@ in {
     wofi.activar = true;
     copyq.activar = true;
     eww.activar = true;
+    desktopEntries.activar = true;
   };
 }

@@ -16,6 +16,7 @@
     ./dunst
     ./copyq
     ./eww
+    ./desktopEntries
     ./entornoHyprland.nix
     ./entornoDeDesarrollo.nix
   ];
