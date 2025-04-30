@@ -13,5 +13,6 @@ in {
     copyq.activar = true;
     eww.activar = true;
     desktopEntries.activar = true;
+    cliphist.activar = true;
   };
 }

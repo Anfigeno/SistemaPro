@@ -6,6 +6,7 @@ in [
   "SUPER, e, exec, nautilus"
   ''
     , Print, exec, ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp -d)" - | ${pkgs.swappy}/bin/swappy -f -''
+  "SUPER, p, exec, ${pkgs.cliphist}/bin/cliphist list | ${pkgs.wofi}/bin/wofi -S dmenu | ${pkgs.cliphist}/bin/cliphist decode | ${pkgs.wl-clipboard}/bin/wl-copy"
 
   # Esencial
   "SUPER SHIFT, r, exec, hyprctl reload"
