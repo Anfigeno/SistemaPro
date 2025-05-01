@@ -13,5 +13,5 @@
     }
   ];
 
-  home.packages = with pkgs; [ barrier ];
+  home.packages = with pkgs; [ deskflow ];
 }

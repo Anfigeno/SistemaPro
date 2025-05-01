@@ -15,5 +15,5 @@
   ];
 
   # Paquetes extra :)
-  home.packages = with pkgs; [ prismlauncher ];
+  home.packages = with pkgs; [ prismlauncher deskflow ];
 }
