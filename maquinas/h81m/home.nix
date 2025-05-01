@@ -6,9 +6,12 @@
     {
       config.modulosHomeManager = {
         entornoHyprland.activar = true;
-        discord.activar = true;
         fuentes.activar = true;
+        entornoDeDesarrollo.activar = true;
+        discord.activar = true;
       };
     }
   ];
+
+  home.packages = with pkgs; [ barrier ];
 }
