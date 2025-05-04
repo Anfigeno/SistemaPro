@@ -14,6 +14,7 @@ in {
     zed.activar = true;
     fuentes.activar = true;
     git.activar = true;
+    bat.activar = true;
     paquetesExtraDesarrollo.activar = true;
   };
 }

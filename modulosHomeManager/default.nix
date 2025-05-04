@@ -18,6 +18,7 @@
     ./cliphist
     ./obs
     ./stylix
+    ./bat
     ./entornoHyprland
     ./entornoDeDesarrollo
   ];
