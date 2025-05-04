@@ -11,7 +11,6 @@
     ./fuentes
     ./git
     ./wofi
-    ./gtk
     ./hyprland
     ./dunst
     ./eww
