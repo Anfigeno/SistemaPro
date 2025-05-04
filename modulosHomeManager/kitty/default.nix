@@ -18,7 +18,6 @@ in {
 
         shell = "fish";
 
-        font_size = 9;
         modify_font = ''
           cell_height 8px
         '';
@@ -34,7 +33,6 @@ in {
         confirm_os_window_close = 0;
         window_padding_width = 15;
       };
-      extraConfig = builtins.readFile ./mestizo.conf;
     };
   };
 }

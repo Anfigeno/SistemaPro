@@ -14,17 +14,10 @@ in {
         indent_guides = { "enabled" = false; };
         vim_mode = false;
         soft_wrap = "editor_width";
-
-        ui_font_size = 15;
-        ui_font_family = "Ubuntu";
         terminal = {
-          font_family = "Monaspace Neon";
           font_weight = 300;
-          font_fallbacks = [ "CaskaydiaCove Nerd Font" ];
           line_height = "standard";
         };
-        buffer_font_size = 11.5;
-        buffer_font_family = "Monaspace Neon";
         buffer_font_weight = 400;
         buffer_font_features = {
           calt = true;
@@ -42,11 +35,6 @@ in {
         buffer_font_fallbacks =
           [ "CaskaydiaCove Nerd Font" "Monaspace Neon Var" ];
         buffer_line_height = { custom = 2.2; };
-        theme = {
-          mode = "dark";
-          light = "Tokyo Night Light";
-          dark = "Tokyo Night";
-        };
       };
     };
   };

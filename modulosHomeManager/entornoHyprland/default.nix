@@ -9,12 +9,12 @@ in {
 
   config.modulosHomeManager = lib.mkIf cfg.activar {
     hyprland.activar = true;
-    gtk.activar = true;
     dunst.activar = true;
     wofi.activar = true;
     eww.activar = true;
     desktopEntries.activar = true;
     cliphist.activar = true;
+    stylix.activar = true;
     paquetesExtraEntornoHyprland.activar = true;
   };
 }

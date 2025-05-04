@@ -18,6 +18,7 @@
     ./desktopEntries
     ./cliphist
     ./obs
+    ./stylix
     ./entornoHyprland
     ./entornoDeDesarrollo
   ];
