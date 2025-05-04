@@ -6,7 +6,7 @@
     ./neovim
     ./kitty
     ./fish
-    ./discord
+    ./vesktop
     ./zed
     ./fuentes
     ./git
