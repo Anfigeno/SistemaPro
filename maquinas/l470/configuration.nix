@@ -11,6 +11,7 @@
         openssh.activar = true;
         fish.activar = true;
         steam.activar = true;
+        stylix.activar = true;
       };
     }
   ];

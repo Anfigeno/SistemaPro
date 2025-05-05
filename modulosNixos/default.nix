@@ -1,5 +1,5 @@
 { pkgs, lib, config, ... }: {
-  imports = [ ./flatpak ./openssh ./xdg ./fish ./audio ./steam ];
+  imports = [ ./flatpak ./openssh ./xdg ./fish ./audio ./steam ./stylix ];
 
   config.modulosNixos = { audio.activar = lib.mkDefault true; };
 }
