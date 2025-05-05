@@ -6,6 +6,6 @@ in {
   };
 
   config = lib.mkIf cfg.activar {
-    home.packages = with pkgs; [ jq sshfs nixd nixfmt-classic nil obsidian ];
+    home.packages = with pkgs; [ jq sshfs nixd nixfmt-classic obsidian ];
   };
 }

@@ -5,7 +5,14 @@
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.home-manager
     ../../modulosNixos
-    { config.modulosNixos = { xdg.activar = true; flatpak.activar = true; openssh.activar = true; fish.activar = true; }; }
+    {
+      config.modulosNixos = {
+        xdg.activar = true;
+        flatpak.activar = true;
+        openssh.activar = true;
+        fish.activar = true;
+      };
+    }
   ];
 
   home-manager = {
