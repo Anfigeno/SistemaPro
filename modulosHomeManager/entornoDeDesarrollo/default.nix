@@ -15,6 +15,7 @@ in {
     fuentes.activar = true;
     git.activar = true;
     bat.activar = true;
+    zellij.activar = true;
     paquetesExtraDesarrollo.activar = true;
   };
 }

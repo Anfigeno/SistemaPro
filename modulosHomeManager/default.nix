@@ -19,6 +19,7 @@
     ./obs
     ./stylix
     ./bat
+    ./zellij
     ./entornoHyprland
     ./entornoDeDesarrollo
   ];
