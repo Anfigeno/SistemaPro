@@ -8,9 +8,7 @@
     {
       config.modulosNixos = {
         xdg.activar = true;
-        flatpak.activar = true;
         openssh.activar = true;
-        fish.activar = true;
       };
     }
   ];
