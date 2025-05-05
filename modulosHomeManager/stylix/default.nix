@@ -11,6 +11,7 @@ in {
         dunst.enable = false;
         hyprland.enable = false;
         wofi.enable = false;
+        neovim.enable = false;
       };
 
       fonts = {

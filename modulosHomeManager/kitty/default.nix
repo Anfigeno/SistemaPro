@@ -19,7 +19,7 @@ in {
         shell = "fish";
 
         modify_font = ''
-          cell_height 8px
+          cell_height 12px
         '';
         disable_ligatures = "never";
 

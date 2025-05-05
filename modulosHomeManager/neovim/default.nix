@@ -1,9 +1,252 @@
 { pkgs, lib, config, ... }:
-let cfg = config.modulosHomeManager.neovim;
+let
+  cfg = config.modulosHomeManager.neovim;
+
+  deGithub = rev: ref: repo:
+    pkgs.vimUtils.buildVimPlugin {
+      name = "${lib.strings.sanitizeDerivationName repo}";
+      src = builtins.fetchGit {
+        url = "https://github.com/${repo}.git";
+        ref = ref;
+        rev = rev;
+      };
+    };
+
+  mestizo-nvim = deGithub "3492fd6704d916e24096f05ff4c33a2b374934ab" "main"
+    "anfigeno/mestizo.nvim";
+
+  modes-nvim = deGithub "7c6ca20de4c9acb22ef06074e39fd2c021b99935" "main"
+    "mvllow/modes.nvim";
 in {
   options.modulosHomeManager.neovim = {
     activar = lib.mkEnableOption "Activa el módulo de Neovim";
   };
 
-  config = lib.mkIf cfg.activar { programs.neovim.enable = true; };
+  config = lib.mkIf cfg.activar {
+    programs.neovim = {
+      enable = true;
+      viAlias = true;
+      vimAlias = true;
+      extraLuaConfig = builtins.readFile ./opciones.lua;
+      extraPackages = with pkgs; [ fzf ripgrep xclip ];
+      plugins = with pkgs.vimPlugins; [
+        {
+          plugin = trouble-nvim;
+          type = "lua";
+          config = ''require("trouble").setup{}'';
+        }
+
+        {
+          plugin = tiny-inline-diagnostic-nvim;
+          type = "lua";
+          config = builtins.readFile ./complementos/tiny-inline-diagnostic.lua;
+        }
+
+        {
+          plugin = kulala-nvim;
+          type = "lua";
+          config = builtins.readFile ./complementos/kulala.lua;
+        }
+
+        {
+          plugin = lualine-nvim;
+          type = "lua";
+          config = builtins.readFile ./complementos/lualine.lua;
+        }
+
+        {
+          plugin = tabout-nvim;
+          type = "lua";
+          config = builtins.readFile ./complementos/tabout.lua;
+        }
+
+        {
+          plugin = hover-nvim;
+          type = "lua";
+          config = builtins.readFile ./complementos/hover.lua;
+        }
+
+        {
+          plugin = nvim-notify;
+          type = "lua";
+          config = builtins.readFile ./complementos/notify.lua;
+        }
+
+        {
+          plugin = todo-comments-nvim;
+          type = "lua";
+          config = builtins.readFile ./complementos/todo-comments.lua;
+        }
+
+        {
+          plugin = stay-centered-nvim;
+          type = "lua";
+          config = ''require("stay-centered").setup()'';
+        }
+
+        {
+          plugin = dashboard-nvim;
+          type = "lua";
+          config = builtins.readFile ./complementos/dashboard.lua;
+        }
+
+        {
+          plugin = satellite-nvim;
+          type = "lua";
+          config = builtins.readFile ./complementos/satellite.lua;
+        }
+
+        {
+          plugin = mestizo-nvim;
+          config = "colorscheme mestizo";
+        }
+
+        {
+          plugin = nvim-lspconfig;
+          type = "lua";
+          config = builtins.readFile ./lsp.lua;
+        }
+
+        cmp-nvim-lsp
+        cmp-buffer
+        cmp-path
+        cmp-cmdline
+        cmp_luasnip
+        lspkind-nvim
+        luasnip
+        friendly-snippets
+        {
+          plugin = nvim-autopairs;
+          type = "lua";
+          config = builtins.readFile ./complementos/autopairs.lua;
+        }
+        {
+          plugin = nvim-cmp;
+          type = "lua";
+          config = builtins.readFile ./complementos/cmp.lua;
+        }
+
+        (nvim-treesitter.withPlugins (p: [
+          p.tree-sitter-nix
+          p.tree-sitter-lua
+          p.tree-sitter-python
+          p.tree-sitter-php
+          p.tree-sitter-go
+          p.tree-sitter-rust
+          p.tree-sitter-ruby
+          p.tree-sitter-json
+          p.tree-sitter-markdown
+          p.tree-sitter-svelte
+          p.tree-sitter-typescript
+          p.tree-sitter-tsx
+          p.tree-sitter-javascript
+          p.tree-sitter-jsdoc
+          p.tree-sitter-bash
+          p.tree-sitter-fish
+          p.tree-sitter-prisma
+          p.tree-sitter-http
+        ]))
+
+        {
+          plugin = nvim-treesitter;
+          type = "lua";
+          config = builtins.readFile ./complementos/treesitter.lua;
+        }
+
+        scope-nvim
+        {
+          plugin = bufferline-nvim;
+          type = "lua";
+          config = builtins.readFile ./complementos/bufferline.lua;
+        }
+
+        {
+          plugin = nvim-colorizer-lua;
+          type = "lua";
+          config = ''require("colorizer").setup()'';
+        }
+
+        {
+          plugin = gitsigns-nvim;
+          type = "lua";
+          config = builtins.readFile ./complementos/gitsigns.lua;
+        }
+
+        {
+          plugin = inc-rename-nvim;
+          type = "lua";
+          config = ''require("inc_rename").setup()'';
+        }
+
+        {
+          plugin = mini-nvim;
+          type = "lua";
+          config = builtins.readFile ./complementos/mini.lua;
+        }
+
+        {
+          plugin = hlchunk-nvim;
+          type = "lua";
+          config = builtins.readFile ./complementos/hlchunk.lua;
+        }
+
+        {
+          plugin = modes-nvim;
+          type = "lua";
+          config = builtins.readFile ./complementos/modes.lua;
+        }
+
+        {
+          plugin = rainbow-delimiters-nvim;
+          type = "lua";
+          config = builtins.readFile ./complementos/rainbow-delimiters.lua;
+        }
+
+        plenary-nvim
+        {
+          plugin = telescope-nvim;
+          type = "lua";
+          config = builtins.readFile ./complementos/telescope.lua;
+        }
+
+        nvim-web-devicons
+        nui-nvim
+        {
+          plugin = neo-tree-nvim;
+          type = "lua";
+          config = builtins.readFile ./complementos/neotree.lua;
+        }
+
+        {
+          plugin = edgy-nvim;
+          type = "lua";
+          config = builtins.readFile ./complementos/edgy.lua;
+        }
+
+        {
+          plugin = toggleterm-nvim;
+          type = "lua";
+          config = builtins.readFile ./complementos/toggleterm.lua;
+        }
+
+        {
+          plugin = neoformat;
+          type = "lua";
+          config = builtins.readFile ./complementos/neoformat.lua;
+        }
+
+        {
+          plugin = neocord;
+          type = "lua";
+          config = ''require("neocord").setup()'';
+        }
+
+        {
+          plugin = noice-nvim;
+          type = "lua";
+          config = builtins.readFile ./complementos/noice.lua;
+        }
+      ];
+    };
+  };
 }
