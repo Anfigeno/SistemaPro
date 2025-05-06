@@ -6,7 +6,6 @@
     ../../modulosNixos
     {
       config.modulosNixos = {
-        xdg.activar = true;
         openssh.activar = true;
         steam.activar = true;
         stylix.activar = true;

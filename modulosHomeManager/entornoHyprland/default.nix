@@ -15,6 +15,7 @@ in {
     desktopEntries.activar = true;
     cliphist.activar = true;
     stylix.activar = true;
+    xdg.activar = true;
     paquetesExtraEntornoHyprland.activar = true;
   };
 }

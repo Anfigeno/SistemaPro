@@ -1,7 +1,7 @@
 { pkgs, lib, config, ... }:
-let cfg = config.modulosNixos.xdg;
+let cfg = config.modulosHomeManager.xdg;
 in {
-  options.modulosNixos.xdg = {
+  options.modulosHomeManager.xdg = {
     activar = lib.mkEnableOption "Activa el módulo de xdg";
   };
 

@@ -1,5 +1,5 @@
 { pkgs, lib, config, ... }: {
-  imports = [ ./openssh ./xdg ./audio ./steam ./stylix ];
+  imports = [ ./openssh ./audio ./steam ./stylix ];
 
   config.modulosNixos = { audio.activar = lib.mkDefault true; };
 }

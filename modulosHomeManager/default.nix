@@ -20,6 +20,7 @@
     ./stylix
     ./bat
     ./zellij
+    ./xdg
     ./entornoHyprland
     ./entornoDeDesarrollo
   ];
