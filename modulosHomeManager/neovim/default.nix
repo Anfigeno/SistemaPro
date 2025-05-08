@@ -2,7 +2,7 @@
 let
   cfg = config.modulosHomeManager.neovim;
 
-  deGithub = rev: ref: repo:
+  deGithub = { rev, ref, repo, dependencies ? [ ] }:
     pkgs.vimUtils.buildVimPlugin {
       name = "${lib.strings.sanitizeDerivationName repo}";
       src = builtins.fetchGit {
@@ -10,13 +10,27 @@ let
         ref = ref;
         rev = rev;
       };
+      inherit dependencies;
     };
 
-  mestizo-nvim = deGithub "3492fd6704d916e24096f05ff4c33a2b374934ab" "main"
-    "anfigeno/mestizo.nvim";
+  mestizo-nvim = deGithub {
+    rev = "3492fd6704d916e24096f05ff4c33a2b374934ab";
+    ref = "main";
+    repo = "anfigeno/mestizo.nvim";
+  };
 
-  modes-nvim = deGithub "7c6ca20de4c9acb22ef06074e39fd2c021b99935" "main"
-    "mvllow/modes.nvim";
+  modes-nvim = deGithub {
+    rev = "7c6ca20de4c9acb22ef06074e39fd2c021b99935";
+    ref = "main";
+    repo = "mvllow/modes.nvim";
+  };
+
+  auto-lsp-nvim = deGithub {
+    rev = "fa26c9768e111b43495faebdf1b02c91d36d6753";
+    ref = "master";
+    repo = "WieeRd/auto-lsp.nvim";
+    dependencies = [ pkgs.vimPlugins.nvim-lspconfig ];
+  };
 in {
   options.modulosHomeManager.neovim = {
     activar = lib.mkEnableOption "Activa el módulo de Neovim";
@@ -30,6 +44,12 @@ in {
       extraLuaConfig = builtins.readFile ./opciones.lua;
       extraPackages = with pkgs; [ fzf ripgrep xclip ];
       plugins = with pkgs.vimPlugins; [
+        {
+          plugin = auto-lsp-nvim;
+          type = "lua";
+          config = builtins.readFile ./complementos/auto-lsp.lua;
+        }
+
         {
           plugin = trouble-nvim;
           type = "lua";
