@@ -29,7 +29,14 @@ let
     rev = "fa26c9768e111b43495faebdf1b02c91d36d6753";
     ref = "master";
     repo = "WieeRd/auto-lsp.nvim";
-    dependencies = [ pkgs.vimPlugins.nvim-lspconfig ];
+    dependencies = with pkgs.vimPlugins; [ nvim-lspconfig ];
+  };
+
+  tiny-code-action-nvim = deGithub {
+    rev = "3204f45e4102788486f440259e09d50046081675";
+    ref = "main";
+    repo = "rachartier/tiny-code-action.nvim";
+    dependencies = with pkgs.vimPlugins; [ plenary-nvim snacks-nvim ];
   };
 in {
   options.modulosHomeManager.neovim = {
@@ -44,6 +51,12 @@ in {
       extraLuaConfig = builtins.readFile ./opciones.lua;
       extraPackages = with pkgs; [ fzf ripgrep xclip ];
       plugins = with pkgs.vimPlugins; [
+        {
+          plugin = tiny-code-action-nvim;
+          type = "lua";
+          config = builtins.readFile ./complementos/tiny-code-action.lua;
+        }
+
         {
           plugin = auto-lsp-nvim;
           type = "lua";
