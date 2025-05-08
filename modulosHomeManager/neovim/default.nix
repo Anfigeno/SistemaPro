@@ -159,26 +159,7 @@ in {
           config = builtins.readFile ./complementos/cmp.lua;
         }
 
-        (nvim-treesitter.withPlugins (p: [
-          p.tree-sitter-nix
-          p.tree-sitter-lua
-          p.tree-sitter-python
-          p.tree-sitter-php
-          p.tree-sitter-go
-          p.tree-sitter-rust
-          p.tree-sitter-ruby
-          p.tree-sitter-json
-          p.tree-sitter-markdown
-          p.tree-sitter-svelte
-          p.tree-sitter-typescript
-          p.tree-sitter-tsx
-          p.tree-sitter-javascript
-          p.tree-sitter-jsdoc
-          p.tree-sitter-bash
-          p.tree-sitter-fish
-          p.tree-sitter-prisma
-          p.tree-sitter-http
-        ]))
+        nvim-treesitter.withAllGrammars
 
         {
           plugin = nvim-treesitter;
@@ -235,7 +216,6 @@ in {
           config = builtins.readFile ./complementos/rainbow-delimiters.lua;
         }
 
-        plenary-nvim
         {
           plugin = telescope-nvim;
           type = "lua";
@@ -243,7 +223,6 @@ in {
         }
 
         nvim-web-devicons
-        nui-nvim
         {
           plugin = neo-tree-nvim;
           type = "lua";
