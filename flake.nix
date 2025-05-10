@@ -18,7 +18,7 @@
           specialArgs = { inherit inputs system; };
           modules = [ ./maquinas/h81m/configuration.nix ];
         };
-	l470 = nixpkgs.lib.nixosSystem {
+        l470 = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs system; };
           modules = [
             stylix.nixosModules.stylix
@@ -27,5 +27,7 @@
           ];
         };
       };
+
+      devShells.${system}.default = import ./shell.nix { inherit pkgs; };
     };
 }
