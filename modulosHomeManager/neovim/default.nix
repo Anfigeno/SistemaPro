@@ -14,7 +14,7 @@ let
     };
 
   mestizo-nvim = deGithub {
-    rev = "3492fd6704d916e24096f05ff4c33a2b374934ab";
+    rev = "a7ddeae4c9e2167a040b764cae768592b48a021c";
     ref = "main";
     repo = "anfigeno/mestizo.nvim";
   };
@@ -49,6 +49,12 @@ let
       plenary-nvim
     ];
   };
+
+  origami-nvim = deGithub {
+    rev = "a7d8b424abe0eedf50116c460fbe6dfd5783b1d5";
+    ref = "main";
+    repo = "anuvyklack/pretty-fold.nvim";
+  };
 in {
   options.modulosHomeManager.neovim = {
     activar = lib.mkEnableOption "Activa el módulo de Neovim";
@@ -62,6 +68,18 @@ in {
       extraLuaConfig = builtins.readFile ./opciones.lua;
       extraPackages = with pkgs; [ fzf ripgrep xclip ];
       plugins = with pkgs.vimPlugins; [
+        {
+          plugin = origami-nvim;
+          type = "lua";
+          config = builtins.readFile ./complementos/origami.lua;
+        }
+
+        {
+          plugin = nvim-ufo;
+          type = "lua";
+          config = builtins.readFile ./complementos/ufo.lua;
+        }
+
         {
           plugin = tiny-code-action-nvim;
           type = "lua";
