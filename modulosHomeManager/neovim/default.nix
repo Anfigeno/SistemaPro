@@ -63,12 +63,6 @@ in {
       extraPackages = with pkgs; [ fzf ripgrep xclip ];
       plugins = with pkgs.vimPlugins; [
         {
-          plugin = focus-nvim;
-          type = "lua";
-          config = ''require("focus").setup()'';
-        }
-
-        {
           plugin = tiny-code-action-nvim;
           type = "lua";
           config = builtins.readFile ./complementos/tiny-code-action.lua;
