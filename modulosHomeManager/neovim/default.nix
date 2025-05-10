@@ -38,6 +38,17 @@ let
     repo = "rachartier/tiny-code-action.nvim";
     dependencies = with pkgs.vimPlugins; [ plenary-nvim snacks-nvim ];
   };
+
+  toggleterm-manager-nvim = deGithub {
+    rev = "31318b85a7cc20bf50ce32aedf4e835844133863";
+    ref = "main";
+    repo = "ryanmsnyder/toggleterm-manager.nvim";
+    dependencies = with pkgs.vimPlugins; [
+      toggleterm-nvim
+      telescope-nvim
+      plenary-nvim
+    ];
+  };
 in {
   options.modulosHomeManager.neovim = {
     activar = lib.mkEnableOption "Activa el módulo de Neovim";
@@ -51,6 +62,12 @@ in {
       extraLuaConfig = builtins.readFile ./opciones.lua;
       extraPackages = with pkgs; [ fzf ripgrep xclip ];
       plugins = with pkgs.vimPlugins; [
+        {
+          plugin = focus-nvim;
+          type = "lua";
+          config = ''require("focus").setup()'';
+        }
+
         {
           plugin = tiny-code-action-nvim;
           type = "lua";
@@ -235,6 +252,11 @@ in {
           config = builtins.readFile ./complementos/edgy.lua;
         }
 
+        {
+          plugin = toggleterm-manager-nvim;
+          type = "lua";
+          config = builtins.readFile ./complementos/toggleterm-manager.lua;
+        }
         {
           plugin = toggleterm-nvim;
           type = "lua";
