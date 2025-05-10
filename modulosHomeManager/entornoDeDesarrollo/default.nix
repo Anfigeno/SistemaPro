@@ -19,6 +19,7 @@ in {
     btop.activar = true;
     eza.activar = true;
     yazi.activar = true;
+    fzf.activar = true;
     paquetesExtraDesarrollo.activar = true;
   };
 }

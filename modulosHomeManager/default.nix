@@ -24,6 +24,7 @@
     ./btop
     ./eza
     ./yazi
+    ./fzf
     ./entornoHyprland
     ./entornoDeDesarrollo
   ];
