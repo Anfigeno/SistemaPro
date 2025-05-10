@@ -16,6 +16,9 @@ in {
     git.activar = true;
     bat.activar = true;
     zellij.activar = true;
+    btop.activar = true;
+    eza.activar = true;
+    yazi.activar = true;
     paquetesExtraDesarrollo.activar = true;
   };
 }

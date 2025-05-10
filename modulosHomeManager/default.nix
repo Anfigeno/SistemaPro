@@ -21,6 +21,9 @@
     ./bat
     ./zellij
     ./xdg
+    ./btop
+    ./eza
+    ./yazi
     ./entornoHyprland
     ./entornoDeDesarrollo
   ];

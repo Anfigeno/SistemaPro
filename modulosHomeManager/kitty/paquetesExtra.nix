@@ -1,1 +1,1 @@
-{ pkgs }: with pkgs; [ eza ranger xclip btop cmus tty-clock bat zip unzip ]
+{ pkgs }: with pkgs; [ wl-clipboard cmus tty-clock bat zip unzip ]
