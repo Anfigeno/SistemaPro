@@ -69,12 +69,6 @@ in {
       extraPackages = with pkgs; [ fzf ripgrep xclip ];
       plugins = with pkgs.vimPlugins; [
         {
-          plugin = origami-nvim;
-          type = "lua";
-          config = builtins.readFile ./complementos/origami.lua;
-        }
-
-        {
           plugin = nvim-ufo;
           type = "lua";
           config = builtins.readFile ./complementos/ufo.lua;
