@@ -4,9 +4,11 @@ in [
   "SUPER, RETURN, exec, kitty"
   "SUPER, SPACE, exec, wofi --show drun"
   "SUPER, e, exec, nautilus"
-  '', Print, exec, ${pkgs.grim}/bin/grim - | ${pkgs.wl-clipboard}/bin/wl-copy''
-  ''SHIFT, Print, exec, ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp -d)" - | ${pkgs.wl-clipboard}/bin/wl-copy''
+  ", Print, exec, ${pkgs.grim}/bin/grim - | ${pkgs.wl-clipboard}/bin/wl-copy"
+  ''
+    SHIFT, Print, exec, ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp -d)" - | ${pkgs.wl-clipboard}/bin/wl-copy''
   "SUPER, p, exec, ${pkgs.cliphist}/bin/cliphist list | ${pkgs.wofi}/bin/wofi -S dmenu | ${pkgs.cliphist}/bin/cliphist decode | ${pkgs.wl-clipboard}/bin/wl-copy"
+  "SUPER, m, exec, ${pkgs.wofi-emoji}/bin/wofi-emoji"
 
   # Esencial
   "SUPER SHIFT, r, exec, hyprctl reload"
