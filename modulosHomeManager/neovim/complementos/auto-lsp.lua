@@ -4,7 +4,6 @@ require("auto-lsp").setup({
 	["*"] = function()
 		return { capabilities = capabilities }
 	end,
-
 	["lua_ls"] = function()
 		return {
 			capabilities = capabilities,
@@ -14,7 +13,6 @@ require("auto-lsp").setup({
 			} } },
 		}
 	end,
-
 	["ts_ls"] = function()
 		return {
 			capabilities = capabilities,
@@ -39,6 +37,24 @@ require("auto-lsp").setup({
 						includeInlayParameterNameHintsWhenArgumentMatchesName = true,
 						includeInlayPropertyDeclarationTypeHints = true,
 						includeInlayVariableTypeHints = true,
+					},
+				},
+			},
+		}
+	end,
+	["gopls"] = function()
+		return {
+			capabilities = capabilities,
+			settings = {
+				gopls = {
+					["ui.inlayhint.hints"] = {
+						assignVariableTypes = true,
+						compositeLiteralFields = true,
+						compositeLiteralTypes = true,
+						constantValues = true,
+						functionTypeParameters = true,
+						parameterNames = true,
+						rangeVariableTypes = true,
 					},
 				},
 			},
