@@ -69,6 +69,13 @@ in {
       extraPackages = with pkgs; [ fzf ripgrep xclip ];
       plugins = with pkgs.vimPlugins; [
         {
+          plugin = markview-nvim;
+          type = "lua";
+          config = # lua
+            ''require("markview").setup()'';
+        }
+
+        {
           plugin = nvim-ufo;
           type = "lua";
           config = builtins.readFile ./complementos/ufo.lua;
@@ -89,7 +96,8 @@ in {
         {
           plugin = trouble-nvim;
           type = "lua";
-          config = ''require("trouble").setup{}'';
+          config = # lua
+            ''require("trouble").setup{}'';
         }
 
         {
@@ -137,7 +145,8 @@ in {
         {
           plugin = stay-centered-nvim;
           type = "lua";
-          config = ''require("stay-centered").setup()'';
+          config = # lua
+            ''require("stay-centered").setup()'';
         }
 
         {
@@ -200,7 +209,8 @@ in {
         {
           plugin = nvim-colorizer-lua;
           type = "lua";
-          config = ''require("colorizer").setup()'';
+          config = # lua
+            ''require("colorizer").setup()'';
         }
 
         {
@@ -212,7 +222,8 @@ in {
         {
           plugin = inc-rename-nvim;
           type = "lua";
-          config = ''require("inc_rename").setup()'';
+          config = # lua
+            ''require("inc_rename").setup()'';
         }
 
         {
@@ -278,7 +289,8 @@ in {
         {
           plugin = neocord;
           type = "lua";
-          config = ''require("neocord").setup()'';
+          config = # lua
+            ''require("neocord").setup()'';
         }
 
         {
