@@ -49,12 +49,6 @@ let
       plenary-nvim
     ];
   };
-
-  origami-nvim = deGithub {
-    rev = "a7d8b424abe0eedf50116c460fbe6dfd5783b1d5";
-    ref = "main";
-    repo = "anuvyklack/pretty-fold.nvim";
-  };
 in {
   options.modulosHomeManager.neovim = {
     activar = lib.mkEnableOption "Activa el módulo de Neovim";
@@ -191,6 +185,7 @@ in {
           config = builtins.readFile ./complementos/cmp.lua;
         }
 
+        nvim-treesitter-context
         nvim-treesitter.withAllGrammars
 
         {
