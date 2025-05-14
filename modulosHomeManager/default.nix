@@ -25,6 +25,7 @@
     ./eza
     ./yazi
     ./fzf
+    ./direnv
     ./entornoHyprland
     ./entornoDeDesarrollo
   ];

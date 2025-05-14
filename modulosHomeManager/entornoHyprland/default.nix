@@ -16,6 +16,7 @@ in {
     cliphist.activar = true;
     stylix.activar = true;
     xdg.activar = true;
+    direnv.activar = true;
     paquetesExtraEntornoHyprland.activar = true;
   };
 }
