@@ -62,6 +62,12 @@ let
     repo = "natecraddock/workspaces.nvim";
     dependencies = with pkgs.vimPlugins; [ telescope-nvim ];
   };
+
+  code-runner-nvim = deGithub {
+    rev = "386bcaa8aa7ae8703281afce4465ecfdb7c44e65";
+    ref = "main";
+    repo = "CRAG666/code_runner.nvim";
+  };
 in {
   options.modulosHomeManager.neovim = {
     activar = lib.mkEnableOption "Activa el módulo de Neovim";
@@ -75,6 +81,19 @@ in {
       extraLuaConfig = builtins.readFile ./opciones.lua;
       extraPackages = with pkgs; [ fzf ripgrep xclip ];
       plugins = with pkgs.vimPlugins; [
+        {
+          plugin = windsurf-nvim;
+          type = "lua";
+          config = # lua
+            ''require("codeium").setup()'';
+        }
+
+        {
+          plugin = code-runner-nvim;
+          type = "lua";
+          config = builtins.readFile ./complementos/code-runner.lua;
+        }
+
         {
           plugin = workspaces-nvim;
           type = "lua";

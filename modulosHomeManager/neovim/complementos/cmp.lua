@@ -23,6 +23,7 @@ cmp.setup({
 		{ name = "luasnip" },
 	}, {
 		{ name = "buffer" },
+		{ name = "codeium" },
 	}),
 	formatting = {
 		fields = { "kind", "abbr", "menu" },
