@@ -49,6 +49,19 @@ let
       plenary-nvim
     ];
   };
+
+  direnv-nvim = deGithub {
+    rev = "a2f1264909463fd012b7b0b6bbfebc282c5d2834";
+    ref = "main";
+    repo = "NotAShelf/direnv.nvim";
+  };
+
+  workspaces-nvim = deGithub {
+    rev = "55a1eb6f5b72e07ee8333898254e113e927180ca";
+    ref = "main";
+    repo = "natecraddock/workspaces.nvim";
+    dependencies = with pkgs.vimPlugins; [ telescope-nvim ];
+  };
 in {
   options.modulosHomeManager.neovim = {
     activar = lib.mkEnableOption "Activa el módulo de Neovim";
@@ -62,6 +75,18 @@ in {
       extraLuaConfig = builtins.readFile ./opciones.lua;
       extraPackages = with pkgs; [ fzf ripgrep xclip ];
       plugins = with pkgs.vimPlugins; [
+        {
+          plugin = workspaces-nvim;
+          type = "lua";
+          config = builtins.readFile ./complementos/workspaces.lua;
+        }
+
+        {
+          plugin = direnv-nvim;
+          type = "lua";
+          config = builtins.readFile ./complementos/direnv.lua;
+        }
+
         {
           plugin = markview-nvim;
           type = "lua";
