@@ -18,9 +18,6 @@ in {
 
         shell = "fish";
 
-        modify_font = ''
-          cell_height 4px
-        '';
         disable_ligatures = "never";
 
         font_features = ''
@@ -31,7 +28,6 @@ in {
         '';
 
         confirm_os_window_close = 0;
-        window_padding_width = 15;
       };
     };
   };
