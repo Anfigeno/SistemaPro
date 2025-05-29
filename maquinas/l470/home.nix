@@ -5,11 +5,12 @@
     ../../modulosHomeManager
     {
       config.modulosHomeManager = {
-        entornoHyprland.activar = true;
         fuentes.activar = true;
         entornoDeDesarrollo.activar = true;
         vesktop.activar = true;
         obs.activar = true;
+        stylix.activar = true;
+        xdg.activar = true;
       };
     }
   ];

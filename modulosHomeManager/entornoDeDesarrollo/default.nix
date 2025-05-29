@@ -20,6 +20,7 @@ in {
     eza.activar = true;
     yazi.activar = true;
     fzf.activar = true;
+    direnv.activar = true;
     paquetesExtraDesarrollo.activar = true;
   };
 }
