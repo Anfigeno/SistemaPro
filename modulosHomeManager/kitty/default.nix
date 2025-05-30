@@ -27,7 +27,13 @@ in {
           MonaspaceRadon-Bold        +calt +ss01 +ss02 +ss03 +ss04 +ss05 +ss06 +ss07 +ss08 +ss09 +cv62 +case +liga
         '';
 
+        modify_font = ''
+          cell_height 8px
+        '';
+
         confirm_os_window_close = 0;
+        hide_window_decorations = true;
+        window_padding_width = 4;
       };
     };
   };
