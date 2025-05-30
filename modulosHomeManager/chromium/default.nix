@@ -8,7 +8,14 @@ in {
   config = lib.mkIf cfg.activar {
     programs.chromium = {
       enable = true;
-      extensions = [{ id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; }];
+      extensions = [
+        { # Ublock Origin Lite
+          id = "ddkjiahejlhfcafbddmgiahcphecmpfh";
+        }
+        { # Stylus
+          id = "clngdbkpkpeebahjckkjfobafhncgmne";
+        }
+      ];
     };
   };
 }
