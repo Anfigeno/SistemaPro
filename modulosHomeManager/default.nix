@@ -28,5 +28,6 @@
     ./direnv
     ./entornoHyprland
     ./entornoDeDesarrollo
+    ./chromium
   ];
 }
