@@ -11,24 +11,22 @@ in {
     programs.kitty = {
       enable = true;
       settings = {
-        font_family = "Monaspace Neon Medium";
-        bold_font = "Monaspace Krypton Medium";
-        italic_font = "Monaspace Radon Medium";
-        bold_italic_font = "Monaspace Radon Bold";
+        font_family = "Iosevka";
+        bold_font = "Iosevka Bold";
+        italic_font = "Iosevka Italic";
+        bold_italic_font = "Iosevka Bold Italic";
 
         shell = "fish";
 
         disable_ligatures = "never";
 
+        font_size = 10;
         font_features = ''
-          MonaspaceNeon-Medium       +calt +ss01 +ss02 +ss03 +ss04 +ss05 +ss06 +ss07 +ss08 +ss09 +cv62 +case +liga
-          MonaspaceKrypton-Medium    +calt +ss01 +ss02 +ss03 +ss04 +ss05 +ss06 +ss07 +ss08 +ss09 +cv62 +case +liga
-          MonaspaceRadon-Medium      +calt +ss01 +ss02 +ss03 +ss04 +ss05 +ss06 +ss07 +ss08 +ss09 +cv62 +case +liga
-          MonaspaceRadon-Bold        +calt +ss01 +ss02 +ss03 +ss04 +ss05 +ss06 +ss07 +ss08 +ss09 +cv62 +case +liga
+          +calt
         '';
 
         modify_font = ''
-          cell_height 8px
+          cell_height 4px
         '';
 
         confirm_os_window_close = 0;

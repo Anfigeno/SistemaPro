@@ -7,6 +7,7 @@ in {
 
   config = lib.mkIf cfg.activar {
     home.packages = with pkgs; [
+      iosevka
       monaspace
       ubuntu_font_family
       noto-fonts-emoji
