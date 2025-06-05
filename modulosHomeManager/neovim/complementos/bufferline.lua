@@ -3,16 +3,15 @@ require("scope").setup({})
 require("bufferline").setup({
 	highlights = require("mestizo.claves.integraciones.especial.bufferline"),
 	options = {
-		separator_style = "slope",
-		diagnostics = "nvim_lsp",
-		diagnostics_indicator = function(_, _, diagnostics_dict, _)
-			local s = " "
-			for e, n in pairs(diagnostics_dict) do
-				local sym = e == "error" and " " or (e == "warning" and " " or " ")
-				s = s .. n .. sym
-			end
-			return s
-		end,
+		offsets = {
+			{
+				filetype = "neo-tree",
+				text = "Archivos",
+				highlight = "NeotreeNormal",
+				text_align = "center",
+				separator = true,
+			},
+		},
 	},
 })
 

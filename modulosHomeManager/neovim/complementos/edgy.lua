@@ -5,16 +5,6 @@ local edgy = require("edgy")
 
 edgy.setup({
 	animate = { enabled = false },
-	bottom = {
-		{
-			title = "Terminal",
-			ft = "toggleterm",
-			size = { height = 0.4 },
-			filter = function(buf, win)
-				return vim.api.nvim_win_get_config(win).relative == ""
-			end,
-		},
-	},
 	left = {
 		{
 			title = "Estado de git",
@@ -51,7 +41,7 @@ edgy.setup({
 			collapsed = false,
 			open = "Trouble symbols toggle focus=false",
 		},
-    {
+		{
 			title = "Diagnosticos",
 			ft = "trouble",
 			-- filter = function(buf)
