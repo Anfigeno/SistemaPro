@@ -10,7 +10,7 @@
         vesktop.activar = true;
         obs.activar = true;
         stylix.activar = true;
-        chromium.activar = true;
+        floorp.activar = true;
       };
     }
   ];

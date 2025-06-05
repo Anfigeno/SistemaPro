@@ -28,6 +28,6 @@
     ./direnv
     ./entornoHyprland
     ./entornoDeDesarrollo
-    ./chromium
+    ./floorp
   ];
 }
