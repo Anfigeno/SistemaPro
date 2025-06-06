@@ -16,8 +16,8 @@ in {
 
       fonts = {
         monospace = {
-          package = pkgs.monaspace;
-          name = "Monaspace Neon";
+          package = pkgs.iosevka;
+          name = "Iosevka";
         };
         sansSerif = {
           package = pkgs.ubuntu_font_family;

@@ -7,7 +7,6 @@
     ./kitty
     ./fish
     ./vesktop
-    ./zed
     ./fuentes
     ./git
     ./wofi

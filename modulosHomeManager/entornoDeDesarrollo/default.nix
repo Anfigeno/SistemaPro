@@ -11,7 +11,6 @@ in {
     neovim.activar = true;
     kitty.activar = true;
     fish.activar = true;
-    zed.activar = true;
     fuentes.activar = true;
     git.activar = true;
     bat.activar = true;
