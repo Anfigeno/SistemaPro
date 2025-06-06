@@ -82,6 +82,12 @@ in {
       extraPackages = with pkgs; [ fzf ripgrep xclip ];
       plugins = with pkgs.vimPlugins; [
         {
+          plugin = statuscol-nvim;
+          type = "lua";
+          config = builtins.readFile ./complementos/statuscol.lua;
+        }
+
+        {
           plugin = windsurf-nvim;
           type = "lua";
           config = # lua
