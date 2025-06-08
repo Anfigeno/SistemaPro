@@ -81,6 +81,8 @@ in {
       extraLuaConfig = builtins.readFile ./opciones.lua;
       extraPackages = with pkgs; [ fzf ripgrep xclip ];
       plugins = with pkgs.vimPlugins; [
+        no-neck-pain-nvim
+
         {
           plugin = statuscol-nvim;
           type = "lua";
