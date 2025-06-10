@@ -42,13 +42,13 @@ in {
       shellInit = # fish
         ''
           set -g fish_greeting ""
-          set -g tide_os_color white
-          set -g tide_os_bg_color red
-          set -g tide_pwd_bg_color cyan
-          set -g tide_pwd_color_anchors black
-          set -g tide_pwd_color black
-          set -g tide_pwd_color_dirs black
-          set -g tide_pwd_color_truncated_dirs black
+          # set -g tide_os_color white
+          # set -g tide_os_bg_color red
+          # set -g tide_pwd_bg_color cyan
+          # set -g tide_pwd_color_anchors black
+          # set -g tide_pwd_color black
+          # set -g tide_pwd_color_dirs black
+          # set -g tide_pwd_color_truncated_dirs black
         '';
       interactiveShellInit = # fish
         ''

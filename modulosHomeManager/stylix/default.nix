@@ -12,6 +12,7 @@ in {
         hyprland.enable = false;
         wofi.enable = false;
         neovim.enable = false;
+        fish.enable = false;
       };
 
       fonts = {
