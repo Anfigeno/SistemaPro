@@ -25,4 +25,10 @@ vim.g.neoformat_enabled_json = formateadores_para_js
 vim.g.neoformat_enabled_astro = { "prettierd", "biome" }
 vim.g.neoformat_astro_prettierd = formateadores.prettierd
 vim.g.neoformat_astro_biome = formateadores.biome
+
+-- NOTA: Svelte
+vim.g.neoformat_enabled_svelte = { "prettierd", "biome" }
+vim.g.neoformat_svelte_prettierd = formateadores.prettierd
+vim.g.neoformat_svelte_biome = formateadores.biome
+
 vim.keymap.set("n", "<s-f>", "<cmd>Neoformat<cr>", { desc = "Formatea el buffer" })
