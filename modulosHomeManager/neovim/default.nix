@@ -79,21 +79,26 @@ in {
       viAlias = true;
       vimAlias = true;
       extraLuaConfig = builtins.readFile ./opciones.lua;
-      extraPackages = with pkgs; [ fzf ripgrep xclip ];
+      extraPackages = with pkgs; [ fzf ripgrep xclip nodejs_20 ];
       plugins = with pkgs.vimPlugins; [
+        {
+          plugin = avante-nvim;
+          type = "lua";
+          config = builtins.readFile ./complementos/avante.lua;
+        }
+
+        {
+          plugin = copilot-lua;
+          type = "lua";
+          config = builtins.readFile ./complementos/copilot.lua;
+        }
+
         no-neck-pain-nvim
 
         {
           plugin = statuscol-nvim;
           type = "lua";
           config = builtins.readFile ./complementos/statuscol.lua;
-        }
-
-        {
-          plugin = windsurf-nvim;
-          type = "lua";
-          config = # lua
-            ''require("codeium").setup()'';
         }
 
         {

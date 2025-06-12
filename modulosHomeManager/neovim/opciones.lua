@@ -9,6 +9,8 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.relativenumber = true
 vim.opt.shell = "fish"
 vim.o.laststatus = 3
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
 
 vim.api.nvim_create_user_command("Hints", function()
 	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
