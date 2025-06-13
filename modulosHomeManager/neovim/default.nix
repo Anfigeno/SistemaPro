@@ -82,6 +82,13 @@ in {
       extraPackages = with pkgs; [ fzf ripgrep xclip nodejs_20 ];
       plugins = with pkgs.vimPlugins; [
         {
+          plugin = diffview-nvim;
+          type = "lua";
+          config = # lua
+            ''require("diffview").setup()'';
+        }
+
+        {
           plugin = avante-nvim;
           type = "lua";
           config = builtins.readFile ./complementos/avante.lua;
