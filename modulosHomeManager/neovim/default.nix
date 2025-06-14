@@ -78,6 +78,7 @@ in {
       enable = true;
       viAlias = true;
       vimAlias = true;
+      defaultEditor = true;
       extraLuaConfig = builtins.readFile ./opciones.lua;
       extraPackages = with pkgs; [ fzf ripgrep xclip nodejs_20 ];
       plugins = with pkgs.vimPlugins; [
