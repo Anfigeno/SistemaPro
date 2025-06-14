@@ -83,6 +83,12 @@ in {
       extraPackages = with pkgs; [ fzf ripgrep xclip nodejs_20 ];
       plugins = with pkgs.vimPlugins; [
         {
+          plugin = incline-nvim;
+          type = "lua";
+          config = builtins.readFile ./complementos/incline.lua;
+        }
+
+        {
           plugin = diffview-nvim;
           type = "lua";
           config = # lua
