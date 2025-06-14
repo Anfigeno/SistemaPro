@@ -4,5 +4,4 @@ require("toggleterm").setup({
 	shade_terminals = false,
 	autochdir = false,
 	direction = "horizontal",
-	highlights = require("mestizo.claves.integraciones.especial.toggleterm"),
 })

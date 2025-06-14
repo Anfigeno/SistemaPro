@@ -14,7 +14,7 @@ let
     };
 
   mestizo-nvim = deGithub {
-    rev = "776d27756610d211aa92d2d563b9abdbb201c86e";
+    rev = "169ba8543467f62f96b765018522114bdca47259";
     ref = "main";
     repo = "anfigeno/mestizo.nvim";
   };
