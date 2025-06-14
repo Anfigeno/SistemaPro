@@ -7,6 +7,7 @@ in {
 
   config = lib.mkIf cfg.activar {
     home.packages = with pkgs; [
+      nerd-fonts.iosevka
       iosevka
       monaspace
       ubuntu_font_family

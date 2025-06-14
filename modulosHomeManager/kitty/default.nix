@@ -11,10 +11,10 @@ in {
     programs.kitty = {
       enable = true;
       settings = {
-        font_family = "Iosevka";
+        font_family = "Iosevka Nerd Font";
         bold_font = "Iosevka Bold";
         italic_font = "Iosevka Italic";
-        bold_italic_font = "Iosevka Bold Italic";
+        bold_italic_font = "Iosevka Nerd Bold Italic";
 
         shell = "fish";
 
