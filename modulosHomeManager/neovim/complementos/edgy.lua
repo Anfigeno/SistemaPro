@@ -33,24 +33,34 @@ edgy.setup({
 		{
 			title = "Simbolos",
 			ft = "trouble",
-			-- filter = function(buf)
-			-- 	return vim.b[buf].neo_tree_source == "git_status"
-			-- end,
+			filter = function(_, win)
+				return vim.w[win].trouble.mode == "symbols"
+			end,
 			size = { height = 0.5, width = 0.2 },
 			pinned = true,
 			collapsed = false,
-			open = "Trouble symbols toggle focus=false",
+			open = "Trouble symbols toggle focus=true",
 		},
 		{
 			title = "Diagnosticos",
 			ft = "trouble",
-			-- filter = function(buf)
-			-- 	return vim.b[buf].neo_tree_source == "git_status"
-			-- end,
+			filter = function(_, win)
+				return vim.w[win].trouble.mode == "diagnostics"
+			end,
 			size = { height = 0.5, width = 0.2 },
 			pinned = true,
 			collapsed = false,
 			open = "Trouble diagnostics toggle focus=false",
+		},
+	},
+	bottom = {
+		{
+			title = "Terminal",
+			ft = "toggleterm",
+			size = { height = 0.4 },
+			filter = function(buf, win)
+				return vim.api.nvim_win_get_config(win).relative == ""
+			end,
 		},
 	},
 })

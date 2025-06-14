@@ -161,8 +161,7 @@ in {
         {
           plugin = trouble-nvim;
           type = "lua";
-          config = # lua
-            ''require("trouble").setup{}'';
+          config = builtins.readFile ./complementos/trouble.lua;
         }
 
         {
