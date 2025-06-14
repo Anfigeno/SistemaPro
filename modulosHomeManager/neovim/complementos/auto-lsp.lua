@@ -1,11 +1,22 @@
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local navic = require("nvim-navic")
+
+local on_attach = function(client, bufnr)
+	if client.server_capabilities.documentSymbolProvider then
+		navic.attach(client, bufnr)
+	end
+end
 
 require("auto-lsp").setup({
 	["*"] = function()
-		return { capabilities = capabilities }
+		return {
+			on_attach = on_attach,
+			capabilities = capabilities,
+		}
 	end,
 	["lua_ls"] = function()
 		return {
+			on_attach = on_attach,
 			capabilities = capabilities,
 			settings = { Lua = { hint = {
 				enable = true,
@@ -15,6 +26,7 @@ require("auto-lsp").setup({
 	end,
 	["ts_ls"] = function()
 		return {
+			on_attach = on_attach,
 			capabilities = capabilities,
 			settings = {
 				javascript = {
@@ -44,6 +56,7 @@ require("auto-lsp").setup({
 	end,
 	["gopls"] = function()
 		return {
+			on_attach = on_attach,
 			capabilities = capabilities,
 			settings = {
 				gopls = {

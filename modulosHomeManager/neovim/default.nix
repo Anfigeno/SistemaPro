@@ -14,7 +14,7 @@ let
     };
 
   mestizo-nvim = deGithub {
-    rev = "169ba8543467f62f96b765018522114bdca47259";
+    rev = "e011629cccf2bd74b2ce342507d96ebbf94581c7";
     ref = "main";
     repo = "anfigeno/mestizo.nvim";
   };
@@ -83,12 +83,6 @@ in {
       extraPackages = with pkgs; [ fzf ripgrep xclip nodejs_20 ];
       plugins = with pkgs.vimPlugins; [
         {
-          plugin = incline-nvim;
-          type = "lua";
-          config = builtins.readFile ./complementos/incline.lua;
-        }
-
-        {
           plugin = diffview-nvim;
           type = "lua";
           config = # lua
@@ -150,6 +144,12 @@ in {
           plugin = tiny-code-action-nvim;
           type = "lua";
           config = builtins.readFile ./complementos/tiny-code-action.lua;
+        }
+
+        {
+          plugin = nvim-navic;
+          type = "lua";
+          config = builtins.readFile ./complementos/navic.lua;
         }
 
         {
@@ -256,7 +256,6 @@ in {
           config = builtins.readFile ./complementos/cmp.lua;
         }
 
-        nvim-treesitter-context
         nvim-treesitter.withAllGrammars
 
         {
