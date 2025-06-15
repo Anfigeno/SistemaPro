@@ -83,6 +83,12 @@ in {
       extraPackages = with pkgs; [ fzf ripgrep xclip nodejs_20 ];
       plugins = with pkgs.vimPlugins; [
         {
+          plugin = otter-nvim;
+          type = "lua";
+          config = builtins.readFile ./complementos/otter.lua;
+        }
+
+        {
           plugin = diffview-nvim;
           type = "lua";
           config = # lua
