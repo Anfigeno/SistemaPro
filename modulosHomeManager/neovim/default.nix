@@ -68,6 +68,13 @@ let
     ref = "main";
     repo = "CRAG666/code_runner.nvim";
   };
+
+  symbol-usage-nvim = deGithub {
+    rev = "e07c07dfe7504295a369281e95a24e1afa14b243";
+    ref = "main";
+    repo = "Wansmer/symbol-usage.nvim";
+  };
+
 in {
   options.modulosHomeManager.neovim = {
     activar = lib.mkEnableOption "Activa el módulo de Neovim";
@@ -82,6 +89,12 @@ in {
       extraLuaConfig = builtins.readFile ./opciones.lua;
       extraPackages = with pkgs; [ fzf ripgrep xclip nodejs_20 ];
       plugins = with pkgs.vimPlugins; [
+        {
+          plugin = symbol-usage-nvim;
+          type = "lua";
+          config = builtins.readFile ./complementos/symbol-usage.lua;
+        }
+
         {
           plugin = otter-nvim;
           type = "lua";
