@@ -7,9 +7,7 @@ require("telescope").setup({
 		layout_config = {
 			horizontal = {
 				prompt_position = "top",
-				preview_width = 0,
 			},
-			width = 0.45,
 			height = 0.80,
 		},
 	},
@@ -18,5 +16,6 @@ require("telescope").setup({
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<space>ff", builtin.find_files, { desc = "Telescope find files" })
 vim.keymap.set("n", "<space>fg", builtin.live_grep, { desc = "Telescope live grep" })
-vim.keymap.set("n", "<space>fb", builtin.buffers, { desc = "Telescope buffers" })
-vim.keymap.set("n", "<space>fh", builtin.help_tags, { desc = "Telescope help tags" })
+vim.keymap.set("n", "<space>fs", builtin.lsp_document_symbols, { desc = "Telescope simbolos" })
+vim.keymap.set("n", "<space>fR", builtin.lsp_workspace_symbols, { desc = "Telescope referencias" })
+vim.keymap.set("n", "<space>fr", builtin.lsp_references, { desc = "Telescope referencias" })
