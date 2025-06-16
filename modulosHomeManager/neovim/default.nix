@@ -39,17 +39,6 @@ let
     dependencies = with pkgs.vimPlugins; [ plenary-nvim snacks-nvim ];
   };
 
-  toggleterm-manager-nvim = deGithub {
-    rev = "31318b85a7cc20bf50ce32aedf4e835844133863";
-    ref = "main";
-    repo = "ryanmsnyder/toggleterm-manager.nvim";
-    dependencies = with pkgs.vimPlugins; [
-      toggleterm-nvim
-      telescope-nvim
-      plenary-nvim
-    ];
-  };
-
   direnv-nvim = deGithub {
     rev = "a2f1264909463fd012b7b0b6bbfebc282c5d2834";
     ref = "main";
@@ -365,17 +354,6 @@ in {
           plugin = edgy-nvim;
           type = "lua";
           config = builtins.readFile ./complementos/edgy.lua;
-        }
-
-        {
-          plugin = toggleterm-manager-nvim;
-          type = "lua";
-          config = builtins.readFile ./complementos/toggleterm-manager.lua;
-        }
-        {
-          plugin = toggleterm-nvim;
-          type = "lua";
-          config = builtins.readFile ./complementos/toggleterm.lua;
         }
 
         {

@@ -53,16 +53,6 @@ edgy.setup({
 			open = "Trouble diagnostics toggle focus=false",
 		},
 	},
-	bottom = {
-		{
-			title = "Terminal",
-			ft = "toggleterm",
-			size = { height = 0.4 },
-			filter = function(buf, win)
-				return vim.api.nvim_win_get_config(win).relative == ""
-			end,
-		},
-	},
 })
 
 vim.keymap.set("n", "<c-h>", function()
