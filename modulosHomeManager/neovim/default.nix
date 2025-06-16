@@ -90,6 +90,15 @@ in {
       extraPackages = with pkgs; [ fzf ripgrep xclip nodejs_20 ];
       plugins = with pkgs.vimPlugins; [
         {
+          plugin = lazydev-nvim;
+          type = "lua";
+          config = # lua
+            ''
+              require("lazydev").setup()
+            '';
+        }
+
+        {
           plugin = symbol-usage-nvim;
           type = "lua";
           config = builtins.readFile ./complementos/symbol-usage.lua;
