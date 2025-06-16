@@ -108,8 +108,7 @@ in {
         {
           plugin = diffview-nvim;
           type = "lua";
-          config = # lua
-            ''require("diffview").setup()'';
+          config = builtins.readFile ./complementos/diffview.lua;
         }
 
         {
