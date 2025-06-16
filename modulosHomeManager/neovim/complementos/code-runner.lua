@@ -2,7 +2,6 @@ require("code_runner").setup({
 	filetype = {
 		typescript = "bun",
 	},
-	mode = "toggleterm",
 	startining = false,
 })
 
