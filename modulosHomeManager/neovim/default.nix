@@ -90,6 +90,12 @@ in {
       extraPackages = with pkgs; [ fzf ripgrep xclip nodejs_20 ];
       plugins = with pkgs.vimPlugins; [
         {
+          plugin = which-key-nvim;
+          type = "lua";
+          config = builtins.readFile ./complementos/wich-key.lua;
+        }
+
+        {
           plugin = lazydev-nvim;
           type = "lua";
           config = # lua
