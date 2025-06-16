@@ -7,7 +7,7 @@ require("neo-tree").setup({
 		"edgy",
 	},
 	popup_border_style = "rounded",
-	enable_git_status = false,
+	enable_git_status = true,
 	enable_diagnostics = true,
 	filesystem = {
 		filtered_items = {
