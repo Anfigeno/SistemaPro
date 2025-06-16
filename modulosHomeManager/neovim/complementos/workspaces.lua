@@ -2,7 +2,7 @@ require("workspaces").setup({
 	hooks = {
 		open = {
 			function()
-				require("edgy").toggle("left")
+				vim.cmd("Neotree toggle")
 			end,
 		},
 	},

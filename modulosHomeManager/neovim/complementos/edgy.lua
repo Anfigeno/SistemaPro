@@ -5,30 +5,6 @@ local edgy = require("edgy")
 
 edgy.setup({
 	animate = { enabled = false },
-	left = {
-		{
-			title = "Estado de git",
-			ft = "neo-tree",
-			filter = function(buf)
-				return vim.b[buf].neo_tree_source == "git_status"
-			end,
-			size = { height = 0.5, width = 0.2 },
-			pinned = true,
-			collapsed = false,
-			open = "Neotree position=right git_status",
-		},
-		{
-			title = "Explorador de archivos",
-			ft = "neo-tree",
-			filter = function(buf)
-				return vim.b[buf].neo_tree_source == "filesystem"
-			end,
-			size = { height = 0.5, width = 0.2 },
-			pinned = true,
-			collapsed = false,
-			open = "Neotree toggle focus",
-		},
-	},
 	right = {
 		{
 			title = "Simbolos",
@@ -54,10 +30,6 @@ edgy.setup({
 		},
 	},
 })
-
-vim.keymap.set("n", "<c-h>", function()
-	edgy.toggle("left")
-end)
 
 vim.keymap.set("n", "<c-l>", function()
 	edgy.toggle("right")
