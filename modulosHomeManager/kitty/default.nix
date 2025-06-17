@@ -30,8 +30,8 @@ in {
         '';
 
         confirm_os_window_close = 0;
+        hide_window_decorations = true;
         window_padding_width = 4;
-        linux_display_server = "x11";
       };
     };
   };
