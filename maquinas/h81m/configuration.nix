@@ -9,6 +9,7 @@
       config.modulosNixos = {
         xdg.activar = true;
         openssh.activar = true;
+        stylix.activar = true;
       };
     }
   ];
