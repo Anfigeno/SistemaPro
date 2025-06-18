@@ -16,7 +16,11 @@
       nixosConfigurations = {
         h81m = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs system; };
-          modules = [ ./maquinas/h81m/configuration.nix ];
+          modules = [
+            stylix.nixosModules.stylix
+            home-manager.nixosModules.home-manager
+            ./maquinas/l470/configuration.nix
+          ];
         };
         l470 = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs system; };
