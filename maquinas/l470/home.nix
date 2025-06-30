@@ -7,7 +7,6 @@
       config.modulosHomeManager = {
         fuentes.activar = true;
         entornoDeDesarrollo.activar = true;
-        vesktop.activar = true;
         obs.activar = true;
         stylix.activar = true;
         floorp.activar = true;
@@ -16,5 +15,15 @@
   ];
 
   # Paquetes extra :)
-  home.packages = with pkgs; [ prismlauncher deskflow qbittorrent caprine ];
+  home.packages = with pkgs; [
+    prismlauncher
+    qbittorrent
+    revolt-desktop
+    discord-ptb
+  ];
+
+  home.sessionVariables = {
+    TERMINAL = "kitty";
+    TERM = "kitty";
+  };
 }
