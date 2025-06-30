@@ -105,23 +105,17 @@ in {
           config = builtins.readFile ./complementos/otter.lua;
         }
 
-        {
-          plugin = diffview-nvim;
-          type = "lua";
-          config = builtins.readFile ./complementos/diffview.lua;
-        }
+        # {
+        #   plugin = avante-nvim;
+        #   type = "lua";
+        #   config = builtins.readFile ./complementos/avante.lua;
+        # }
 
-        {
-          plugin = avante-nvim;
-          type = "lua";
-          config = builtins.readFile ./complementos/avante.lua;
-        }
-
-        {
-          plugin = copilot-lua;
-          type = "lua";
-          config = builtins.readFile ./complementos/copilot.lua;
-        }
+        # {
+        #   plugin = copilot-lua;
+        #   type = "lua";
+        #   config = builtins.readFile ./complementos/copilot.lua;
+        # }
 
         no-neck-pain-nvim
 
