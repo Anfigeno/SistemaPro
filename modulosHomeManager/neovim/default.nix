@@ -14,7 +14,7 @@ let
     };
 
   mestizo-nvim = deGithub {
-    rev = "a899a2c84b44ca91aeb1d3601bc8b1bbffe4a2f2";
+    rev = "285ffc9d80bd6504dc437fe4e0860983b2f918f0";
     ref = "main";
     repo = "anfigeno/mestizo.nvim";
   };
@@ -76,8 +76,17 @@ in {
       vimAlias = true;
       defaultEditor = true;
       extraLuaConfig = builtins.readFile ./opciones.lua;
-      extraPackages = with pkgs; [ fzf ripgrep xclip nodejs_20 ];
       plugins = with pkgs.vimPlugins; [
+
+        nvim-dap-ui
+        nvim-dap-go
+        nvim-dap-virtual-text
+        {
+          plugin = nvim-dap;
+          type = "lua";
+          config = builtins.readFile ./complementos/dap.lua;
+        }
+
         {
           plugin = which-key-nvim;
           type = "lua";
