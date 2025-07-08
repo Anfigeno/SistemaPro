@@ -14,7 +14,7 @@ let
     };
 
   mestizo-nvim = deGithub {
-    rev = "285ffc9d80bd6504dc437fe4e0860983b2f918f0";
+    rev = "c79366a866a93e3e38a6aa44875f590b778c12b0";
     ref = "main";
     repo = "anfigeno/mestizo.nvim";
   };
@@ -77,7 +77,6 @@ in {
       defaultEditor = true;
       extraLuaConfig = builtins.readFile ./opciones.lua;
       plugins = with pkgs.vimPlugins; [
-
         nvim-dap-ui
         nvim-dap-go
         nvim-dap-virtual-text
@@ -126,7 +125,11 @@ in {
         #   config = builtins.readFile ./complementos/copilot.lua;
         # }
 
-        no-neck-pain-nvim
+        {
+          plugin = no-neck-pain-nvim;
+          type = "lua";
+          config = builtins.readFile ./complementos/no-neck-pain.lua;
+        }
 
         {
           plugin = statuscol-nvim;
