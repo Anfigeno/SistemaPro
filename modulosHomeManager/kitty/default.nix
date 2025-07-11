@@ -26,7 +26,7 @@ in {
         '';
 
         modify_font = ''
-          cell_height 4px
+          cell_height 8px
         '';
 
         confirm_os_window_close = 0;
