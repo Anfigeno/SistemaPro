@@ -7,7 +7,6 @@ in {
 
   config = lib.mkIf cfg.activar {
     environment.systemPackages = with pkgs.gnomeExtensions; [
-      blur-my-shell
       appindicator
     ];
 
