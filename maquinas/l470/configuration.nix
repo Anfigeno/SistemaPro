@@ -9,7 +9,8 @@
         openssh.activar = true;
         steam.activar = true;
         stylix.activar = true;
-        gnome.activar = true;
+        gdm.activar = true;
+        hyprland.activar = true;
       };
     }
   ];
