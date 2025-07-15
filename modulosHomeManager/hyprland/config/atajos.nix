@@ -13,7 +13,9 @@ in [
   # Esencial
   "SUPER SHIFT, r, exec, hyprctl reload"
   "SUPER SHIFT, c, killactive"
-  "SUPER SHIFT, F, exec, hyprctl dispatch togglefloating && hyprctl dispatch centerwindow"
+  "SUPER SHIFT, F, togglefloating"
+  "SUPER SHIFT, F, resizeactive, exact 600 400"
+  "SUPER SHIFT, F, centerwindow"
   "SUPER, F, fullscreen"
 
   # Cambiar entre ventanas

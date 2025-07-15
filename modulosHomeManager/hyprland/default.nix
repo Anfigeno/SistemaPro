@@ -14,8 +14,12 @@ in {
       settings = {
         "$mod" = "SUPER";
         bind = import ./config/atajos.nix { inherit pkgs; };
-        exec-once = [ "${pkgs.eww}/bin/eww open barra_de_tareas" "${pkgs.swww}/bin/swww-daemon" ];
-        exec = [ "${pkgs.swww}/bin/swww img $HOME/fondo.png"];
+        exec-once = [
+          "${pkgs.eww}/bin/eww open barra_de_tareas"
+          "${pkgs.swww}/bin/swww-daemon"
+        ];
+        windowrule = [ "size 600 400, class:^(.*)$, title:^(.*)$" ];
+        exec = [ "${pkgs.swww}/bin/swww img $HOME/fondo.png" ];
         input = {
           kb_layout = "latam";
           sensitivity = -0.4;
