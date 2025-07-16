@@ -14,7 +14,7 @@ let
     };
 
   mestizo-nvim = deGithub {
-    rev = "c79366a866a93e3e38a6aa44875f590b778c12b0";
+    rev = "def3ef8cbc86357e34dd920f50245c59c980bb80";
     ref = "main";
     repo = "anfigeno/mestizo.nvim";
   };
@@ -237,8 +237,7 @@ in {
         {
           plugin = stay-centered-nvim;
           type = "lua";
-          config = # lua
-            ''require("stay-centered").setup()'';
+          config = builtins.readFile ./complementos/stay-centered.lua;
         }
 
         {
