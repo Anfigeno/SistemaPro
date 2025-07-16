@@ -13,6 +13,7 @@ in {
         wofi.enable = false;
         neovim.enable = false;
         fish.enable = false;
+        kitty.enable = false;
       };
 
       fonts = {

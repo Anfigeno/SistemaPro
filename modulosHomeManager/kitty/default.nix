@@ -10,29 +10,39 @@ in {
 
     programs.kitty = {
       enable = true;
-      settings = {
-        font_family = "Iosevka Nerd Font";
-        bold_font = "Iosevka Bold";
-        italic_font = "Iosevka Italic";
-        bold_italic_font = "Iosevka Nerd Bold Italic";
+      settings = lib.mkMerge [
+        {
+          font_family = "Iosevka Nerd Font";
+          bold_font = "Iosevka Bold";
+          italic_font = "Iosevka Italic";
+          bold_italic_font = "Iosevka Nerd Bold Italic";
 
-        shell = "fish";
+          shell = "${pkgs.fish}/bin/fish";
 
-        disable_ligatures = "never";
+          disable_ligatures = "never";
+          font_size = 10;
+          font_features = ''
+            +calt
+          '';
 
-        font_size = 10;
-        font_features = ''
-          +calt
-        '';
+          modify_font = ''
+            cell_height 8px
+          '';
 
-        modify_font = ''
-          cell_height 8px
-        '';
+          confirm_os_window_close = 0;
+          hide_window_decorations = true;
 
-        confirm_os_window_close = 0;
-        hide_window_decorations = true;
-        window_padding_width = 4;
-      };
+          tab_bar_style = "separator";
+          tab_separator = ".";
+
+          tab_title_template = " {index}・{title} ";
+
+          map = ''
+            ctrl+shift+t new_tab_with_cwd
+            map ctrl+shift+enter launch --cwd=current'';
+        }
+        (import ./mestizo.nix)
+      ];
     };
   };
 }
