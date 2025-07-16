@@ -2,9 +2,7 @@
 let audio = import ./scripts/audio.nix { inherit pkgs; };
 in [
   # Mousee
-  ", mouse:274, bringactivetotop"
-  "CTRL, mouse:274, killactive"
-  "SUPER, mouse:272, togglefloating"
+  "SUPER, mouse:274, togglefloating"
 
   "SUPER, RETURN, exec, kitty"
   "SUPER, SPACE, exec, wofi --show drun"
