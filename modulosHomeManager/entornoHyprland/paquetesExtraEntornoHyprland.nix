@@ -7,6 +7,12 @@ in {
   };
 
   config = lib.mkIf cfg.activar {
-    home.packages = with pkgs; [ mpv loupe nautilus floorp ];
+    home.packages = with pkgs; [
+      floorp
+      mpv
+      loupe
+      mate.engrampa
+      amberol
+    ];
   };
 }

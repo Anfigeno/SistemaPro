@@ -11,6 +11,7 @@
         stylix.activar = true;
         gdm.activar = true;
         hyprland.activar = true;
+        thunar.activar = true;
       };
     }
   ];

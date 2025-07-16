@@ -1,9 +1,14 @@
 { pkgs }:
 let audio = import ./scripts/audio.nix { inherit pkgs; };
 in [
+  # Mousee
+  ", mouse:274, bringactivetotop"
+  "CTRL, mouse:274, killactive"
+  "SUPER, mouse:272, togglefloating"
+
   "SUPER, RETURN, exec, kitty"
   "SUPER, SPACE, exec, wofi --show drun"
-  "SUPER, e, exec, nautilus"
+  "SUPER, e, exec, ${pkgs.xfce.thunar}/bin/thunar"
   ", Print, exec, ${pkgs.grim}/bin/grim - | ${pkgs.wl-clipboard}/bin/wl-copy"
   ''
     SHIFT, Print, exec, ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp -d)" - | ${pkgs.wl-clipboard}/bin/wl-copy''
@@ -14,7 +19,6 @@ in [
   "SUPER SHIFT, r, exec, hyprctl reload"
   "SUPER SHIFT, c, killactive"
   "SUPER SHIFT, F, togglefloating"
-  "SUPER SHIFT, F, resizeactive, exact 600 400"
   "SUPER SHIFT, F, centerwindow"
   "SUPER, F, fullscreen"
 
