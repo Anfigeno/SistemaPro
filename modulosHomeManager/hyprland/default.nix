@@ -18,7 +18,6 @@ in {
           "${pkgs.eww}/bin/eww open barra_de_tareas"
           "${pkgs.swww}/bin/swww-daemon"
         ];
-        windowrule = [ "size 600 400, class:^(.*)$, title:^(.*)$" ];
         exec = [ "${pkgs.swww}/bin/swww img $HOME/fondo.png" ];
         input = {
           kb_layout = "latam";
