@@ -17,3 +17,4 @@ vim.api.nvim_create_user_command("Hints", function()
 end, {})
 
 vim.keymap.set("n", "<c-s>", "<cmd>w<cr>")
+vim.keymap.set("n", "<esc>", "<cmd>qal<cr>")
