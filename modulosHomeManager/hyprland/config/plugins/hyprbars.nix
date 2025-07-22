@@ -1,5 +1,4 @@
 {
-  enabled = false;
   bar_color = "rgb(313749)";
   bar_height = 40;
   bar_text_size = 10;
