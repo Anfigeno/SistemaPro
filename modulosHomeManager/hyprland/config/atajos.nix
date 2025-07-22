@@ -1,12 +1,9 @@
 { pkgs }:
 let audio = import ./scripts/audio.nix { inherit pkgs; };
 in [
-  # Mousee
-  "SUPER, mouse:274, togglefloating"
-
   "SUPER, RETURN, exec, kitty"
   "SUPER, SPACE, exec, wofi --show drun"
-  "SUPER, e, exec, ${pkgs.xfce.thunar}/bin/thunar"
+  "SUPER, e, exec, ${pkgs.nautilus}/bin/nautilus"
   ", Print, exec, ${pkgs.grim}/bin/grim - | ${pkgs.wl-clipboard}/bin/wl-copy"
   ''
     SHIFT, Print, exec, ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp -d)" - | ${pkgs.wl-clipboard}/bin/wl-copy''
@@ -19,6 +16,8 @@ in [
   "SUPER SHIFT, F, togglefloating"
   "SUPER SHIFT, F, centerwindow"
   "SUPER, F, fullscreen"
+  "SUPER, r, resizeactive, exact 600 400"
+  "SUPER, c, centerwindow"
 
   # Cambiar entre ventanas
   "SUPER, h, movefocus, l"

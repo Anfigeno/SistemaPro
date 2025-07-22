@@ -13,6 +13,8 @@ in {
       loupe
       mate.engrampa
       amberol
+      nautilus
+      nautilus-open-any-terminal
     ];
   };
 }
