@@ -9,6 +9,7 @@ in {
     home.packages = import ./paquetesExtra.nix { inherit pkgs; };
 
     wayland.windowManager.hyprland = {
+      plugins = with pkgs.hyprlandPlugins; [ hyprbars ];
       systemd.variables = [ "--all" ];
       enable = true;
       settings = {
@@ -34,7 +35,7 @@ in {
             color_inactive = "rgba(00000055)";
           };
 
-          rounding = 10;
+          rounding = 15;
 
           blur = {
             enabled = true;
@@ -45,7 +46,7 @@ in {
           };
 
           active_opacity = 1.0;
-          inactive_opacity = 0.95;
+          inactive_opacity = 0.8;
 
           bezier = [
             "easeInOutQuart, 0.76, 0, 0.24, 1"
@@ -71,10 +72,11 @@ in {
         general = {
           border_size = 1;
           "col.active_border" = "rgba(313749ff)";
-          "col.inactive_border" = "rgba(1e1f2aff)";
+          "col.inactive_border" = "rgba(313749ff)";
           gaps_in = 10;
           gaps_out = 10;
         };
+        plugin = { hyprbars = import ./config/plugins/hyprbars.nix; };
       };
     };
   };

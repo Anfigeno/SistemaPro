@@ -1,16 +1,15 @@
 { lib }:
 let
-  ventanasPorNombreYClase = [{
-    clase = "floorp";
-    titulo = "Floorp - Choose User Profile";
-  }];
-
-  ventanasPorClase = [ "io.bassi.Amberol" ];
-
+  ventanasFlotantes = {
+    porNombreYClase = [{
+      clase = "floorp";
+      titulo = "Floorp - Choose User Profile";
+    }];
+    porClase = [ "io.bassi.Amberol" ];
+  };
 in lib.mkMerge [
-  (lib.map
-    (ventana: "float, class:^(${ventana.clase})$, title:^(${ventana.titulo})$")
-    ventanasPorNombreYClase)
-  (lib.map (clase: "float, class:^(${clase})$") ventanasPorClase)
-  [ "size 200 400, class:^(${builtins.elemAt ventanasPorClase 0})$" ]
+  (lib.map (ventana: "float, class:${ventana.clase}, title:${ventana.titulo}")
+    ventanasFlotantes.porNombreYClase)
+  (lib.map (clase: "float, class:${clase}") ventanasFlotantes.porClase)
+  [ "size 200 400, class:^(io.bassi.Amberol)$" ]
 ]
