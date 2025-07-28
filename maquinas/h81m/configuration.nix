@@ -8,7 +8,7 @@
       config.modulosNixos = {
         openssh.activar = true;
         stylix.activar = true;
-        gnome.activar = true;
+        gvfs.activar = true;
       };
     }
   ];

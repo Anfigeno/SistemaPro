@@ -23,6 +23,8 @@
     extraSpecialArgs = { inherit inputs; };
   };
 
+  networking.firewall.enable = false;
+
   users.users.anfitrion = {
     isNormalUser = true;
     description = "Anfitrion";
