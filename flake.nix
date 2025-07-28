@@ -19,7 +19,7 @@
           modules = [
             stylix.nixosModules.stylix
             home-manager.nixosModules.home-manager
-            ./maquinas/l470/configuration.nix
+            ./maquinas/h81m/configuration.nix
           ];
         };
         l470 = nixpkgs.lib.nixosSystem {
