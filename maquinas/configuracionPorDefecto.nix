@@ -1,38 +1,34 @@
-{ inputs, config, pkgs, ... }:
+{ inputs, config, pkgs, maquina, usuario, ... }:
 
 {
   imports = [
-    ./hardware-configuration.nix
-    ../../modulosNixos
-    {
-      config.modulosNixos = {
-        openssh.activar = true;
-        stylix.activar = true;
-        gvfs.activar = true;
-      };
-    }
+    ./${maquina}/hardware-configuration.nix
+    ./${maquina}/configuracionAdicional.nix
+    ../modulosNixos
   ];
 
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.anfitrion = ./home.nix;
+    users.${usuario} = ./${maquina}/home.nix;
     extraSpecialArgs = { inherit inputs; };
   };
 
-  users.users.anfitrion = {
+  users.users.${usuario} = {
     isNormalUser = true;
-    description = "Anfitrion";
+    description = usuario;
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
-  nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  nix.gc = {
+    automatic = true;
+    dates = "daily";
+    options = "--delete-older-than 3d";
+  };
 
-  networking.hostName = "h81m";
+  networking.hostName = maquina;
   networking.networkmanager.enable = true;
 
   time.timeZone = "America/Lima";

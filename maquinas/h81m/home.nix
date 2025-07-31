@@ -11,6 +11,4 @@
       };
     }
   ];
-
-  home.packages = with pkgs; [ deskflow ];
 }
