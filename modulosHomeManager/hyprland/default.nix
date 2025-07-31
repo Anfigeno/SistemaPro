@@ -9,7 +9,6 @@ in {
     home.packages = import ./paquetesExtra.nix { inherit pkgs; };
 
     wayland.windowManager.hyprland = {
-      plugins = with pkgs.hyprlandPlugins; [ hyprbars ];
       systemd.variables = [ "--all" ];
       enable = true;
       settings = {
@@ -76,7 +75,6 @@ in {
           gaps_in = 10;
           gaps_out = 10;
         };
-        plugin = { hyprbars = import ./config/plugins/hyprbars.nix; };
       };
     };
   };
