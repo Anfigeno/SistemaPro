@@ -19,9 +19,7 @@
     graphics.enable = true;
     nvidia.modesetting.enable = true;
 
-    bluetooth = {
-      enable = true;
-    };
+    bluetooth = { enable = true; };
   };
 
   services.blueman.enable = true;
