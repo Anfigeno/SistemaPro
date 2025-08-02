@@ -9,7 +9,6 @@
         entornoDeDesarrollo.activar = true;
         entornoHyprland.activar = true;
         obs.activar = true;
-        stylix.activar = true;
         floorp.activar = true;
       };
     }
